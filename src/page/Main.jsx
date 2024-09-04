@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import zaki from '../assets/zaki2.jpg';
+import zaki from '../assets/zaki-main.jpg';
 import { TypeAnimation } from 'react-type-animation';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Skills from '../section/Skills';
@@ -10,7 +10,7 @@ import Project from '../section/Project';
 export default function Main(){
     return(
         <div className="w-full bg-black text-white">
-            <div className="mx-16 py-16 flex justify-evenly items-center ">
+            <div className="mx-7 lg:mx-16 lg:py-16 py-7 flex justify-evenly items-center flex-col lg:flex-row">
                 <div className='w-full font-mono'>
                     <h1 className='text-2xl font-bold'>
                         <TypeAnimation

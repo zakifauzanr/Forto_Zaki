@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 
 export default function Project(){
     return(
-        <div className="mx-10 py-5">
+        <div className="mx-10 py-5" id='Project'>
             <h1 className='text-2xl font-mono font-bold text-center my-3'>Recent Projects</h1>
             {DataProject.slice(0,3).map((item,idx)=>(
-                <div key={idx} className="my-3 flex justify-left items-center border border-md p-5">
+                <div key={idx} className="my-3 flex flex-col lg:flex-row justify-left items-center border border-md p-5">
                     <img className='w-96 mx-5' src={item.Gambar || skeleton} alt="" />
                     <div>
                         <h1 className='text-xl font-semibold font-mono'><span>Nama Project </span>: {item.Nama}</h1>

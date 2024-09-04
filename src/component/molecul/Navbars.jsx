@@ -6,6 +6,7 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
+import { Link as Linkdom } from 'react-scroll';
  
 export default function Navbars() {
   const [openNav, setOpenNav] = React.useState(false);
@@ -29,49 +30,59 @@ export default function Navbars() {
           Home
         </Link>
       </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
+      <Linkdom 
+        className="nav-link"
+        to="Project"
+        spy={true}
+        smooth={true}
+        offset={-50}
+        duration={500}
       >
-        <a href="#" className="flex items-center">
-          About
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
+        <Typography
+          as="li"
+          variant="small"
+          color="blue-gray"
+          className="p-1 font-normal"
+        >
+          <a href="#" className="flex items-center">
+            Project
+          </a>
+        </Typography>
+      </Linkdom>
+      <Linkdom
+        className="nav-link"
+        to="Award"
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
       >
-        <a href="#" className="flex items-center">
-          Project
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <a href="#" className="flex items-center">
-          Awards
-        </a>
-      </Typography>
+        <Typography
+          as="li"
+          variant="small"
+          color="blue-gray"
+          className="p-1 font-normal"
+        >
+          <a href="#" className="flex items-center">
+            Awards
+          </a>
+        </Typography>
+      </Linkdom>
     </ul>
   );
  
   return (
       <Navbar className="sticky top-0 bg-black z-10 rounded-none px-4 py-2 lg:px-8 lg:py-4 border-none">
         <div className="flex items-center justify-between text-blue-gray-900">
-          <Typography
-            as="a"
-            href="#"
-            className="mr-4 cursor-pointer py-1.5 font-medium"
-          >
-            Zakifr
-          </Typography>
+          <Link to='/'>
+            <Typography
+              as="a"
+              href="#"
+              className="mr-4 cursor-pointer py-1.5 font-medium"
+            >
+              Zakifr
+            </Typography>
+          </Link>
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
             <IconButton

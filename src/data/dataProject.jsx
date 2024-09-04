@@ -4,6 +4,8 @@ import ournews from '../assets/Project/ournews.jpg';
 import likenews from '../assets/Project/likenews.png';
 import ecommerce from '../assets/Project/ecommerce.png';
 import kilang from '../assets/Project/kilang.png';
+import bungaputih from '../assets/Project/bungaputih.png';
+import sikab from '../assets/Project/sikab.png';
 
 const DataProject = [
     {
@@ -67,6 +69,25 @@ const DataProject = [
         Link:'',
         Tipe:'Trial Project',
         Gambar:kilang,
+    },
+    {
+        Nama: 'Sikab Kaltim',
+        Deskripsi:`Website ini merupakan website yang ditujukan untuk menampilkan berbagai macam burung endemik khas kalimantan timur. Website ini memiliki fitur seperti
+                    Pencarian informasi, Pemberian informasi habitat, hingga galeri burung.`,
+        Tools:'ReactJS, NodeJS, TailwindCSS, Mysql',
+        Mitra:'',
+        Link:'',
+        Tipe:'Recent',
+        Gambar:sikab,
+    },
+    {
+        Nama: 'Web Arsip Surat',
+        Deskripsi:`Website ini merupakan website dashboard yang difungsikan untuk mendigitalisasi proses pengarsipan surat. Fitur yang terdapat dalam website ini berupa pencarian, pengelompokan, penyaringan hingga memberikan detail informasi setiap surat yang ada.`,
+        Tools:'ReactJS, NodeJS, TailwindCSS, Mysql',
+        Mitra:'DInas Pemuda dan Olahraga Provinsi Kalimantan Timur dan Kantor Desa Bunga Putih',
+        Link:'',
+        Tipe:'Recent',
+        Gambar:bungaputih,
     },
 ]
 
