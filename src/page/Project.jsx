@@ -74,9 +74,14 @@ export default function Project(){
                             <p className='text-md font-thin text-slate-100'><span className='mr-3'>Deskripsi </span>: {item.Deskripsi}</p>
                             <div className='my-3 flex justify-between items-center'>
                                 <h2 className='text-sm font-thin text-slate-400 w-40'><span className='mr-3'>Tools</span>: {item.Tools}</h2>
-                                <Button variant='outlined' className='p-2 rounded-md mx-2'>
-                                    <a href={item.Link}>Live Demo</a>
-                                </Button>
+                                <div className='flex justify-between'>
+                                    <Button variant='outlined' className='p-2 rounded-md mx-2'>
+                                        <a href={item.Link}>Live Demo</a>
+                                    </Button>
+                                    <Button variant='outlined' className='p-2 rounded-md mx-2'>
+                                        <a href={item.Github}>Github</a>
+                                    </Button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -96,9 +101,14 @@ export default function Project(){
                             <p className='text-md font-thin text-slate-100'><span className='mr-3'>Deskripsi </span>: {item.Deskripsi}</p>
                             <div className='my-2 flex justify-between items-center'>
                                 <h2 className='text-sm font-thin text-slate-400 w-40'><span className='mr-3'>Tools</span>: {item.Tools}</h2>
-                                <Button variant='outlined' className='p-2 rounded-md mx-2'>
-                                    <a href={item.Link}>Live Demo</a>
-                                </Button>
+                                <div className='flex justify-between'>
+                                    <Button variant='outlined' className='p-2 rounded-md mx-2'>
+                                        <a href={item.Link}>Live Demo</a>
+                                    </Button>
+                                    <Button variant='outlined' className='p-2 rounded-md mx-2'>
+                                        <a href={item.Github}>Github</a>
+                                    </Button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -116,9 +126,14 @@ export default function Project(){
                             <p className='text-md font-thin text-slate-100'><span className='mr-3'>Deskripsi </span>: {item.Deskripsi}</p>
                             <div className='my-2 flex justify-between items-center'>
                                 <h2 className='text-sm font-thin text-slate-400 w-40'><span className='mr-3'>Tools</span>: {item.Tools}</h2>
-                                <Button variant='outlined' className='p-2 rounded-md mx-2'>
-                                    <a href={item.Link}>Live Demo</a>
-                                </Button>
+                                <div className='flex justify-between'>
+                                    <Button variant='outlined' className='p-2 rounded-md mx-2'>
+                                        <a href={item.Link}>Live Demo</a>
+                                    </Button>
+                                    <Button variant='outlined' className='p-2 rounded-md mx-2'>
+                                        <a href={item.Github}>Github</a>
+                                    </Button>
+                                </div>
                             </div>
                         </div>
                     </div>
