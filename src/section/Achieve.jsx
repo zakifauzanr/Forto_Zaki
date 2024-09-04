@@ -2,7 +2,7 @@ export default function Achieve(){
     return(
         <div id="Award">
         <div className='mx-5 lg:mx-12'>
-        <h1 className='text-2xl font-mono font-bold my-3 text-center'>My Achieve</h1>
+        <h1 className='text-2xl font-mono font-bold my-3 text-center'>Achievement</h1>
             <div className="flex justify-between items-center">
             <div>
                 <h1 className="text-lg font-semibold">

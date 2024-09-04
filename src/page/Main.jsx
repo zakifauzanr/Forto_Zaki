@@ -29,8 +29,8 @@ export default function Main(){
                     </h1>
                     <h2 className='text-xl font-semibold'>A Front-End Web Developer</h2>
                     <p className='text-md text-slate-400 font-thin my-1'>
-                        Im a passionate Front-end Web Developer based in Samarinda, East Borneo. 
-                        Im a student of the Information Systems Study Program at Mulawarman University, currently in my sixth semester.
+                        Im a passionate Front-end Web Developer based in Samarinda, East Borneo, 
+                        Currently, I am a 4th year student of the Information Systems Study Program at Mulawarman University.
                     </p>
                     <a href="https://github.com/zackoflonely">
                         <FontAwesomeIcon style={{ fontSize: '2em' }} className='mr-3' icon={faGithub}/>
