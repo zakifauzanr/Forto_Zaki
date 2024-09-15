@@ -15,7 +15,7 @@ export default function Achieve(){
                     <li>Mempresentasikan projek didepan stakeholder dan pejabat</li>
                 </ol>
             </div>
-            <div className='font-light text-sm text-slate-300'>21 Apr 2021 – 23 Apr 2021 </div>
+                <div className='font-light text-sm text-slate-300'>21 Apr 2021 – 23 Apr 2021 </div>
             </div>
             <div className="flex justify-between items-center">
             <div>
@@ -28,8 +28,13 @@ export default function Achieve(){
                     <li>Menganalisis tentang kekurangan dan masalah yang terjadi pada sistem pendidikan di Indonesia</li>
                 </ol>
             </div>
-            <div className='font-light text-sm text-slate-300'>23 Apr 2021 – 24 Apr 2021 </div>
+                <div className='font-light text-sm text-slate-300'>23 Apr 2021 – 24 Apr 2021 </div>
             </div>
+        </div>
+        <div className="text-center my-5">
+            <a className="border border-white rounded-md p-2 hover:bg-white hover:text-black hover:font-semibold" href='cv/CV_ATS.pdf' download="CV_ATS.pdf">
+                Download CV
+            </a>
         </div>
         </div>
     )
