@@ -3,7 +3,7 @@ import './App.css'
 import Main from './page/Main'
 import Navbars from './component/molecul/Navbars'
 import Project from './page/Project'
-import Footers from './Footers'
+import Footers from './component/molecul/Footers'
 
 function App() {
 

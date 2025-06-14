@@ -9,8 +9,8 @@ import Project from '../section/Project';
 
 export default function Main(){
     return(
-        <div className="w-full bg-black text-white">
-            <div className="mx-7 lg:mx-16 lg:py-16 py-7 flex justify-evenly items-center flex-col lg:flex-row">
+        <div className="w-full min-h-screen  text-white">
+            <div className="mx-7 lg:mx-10 lg:py-16 py-7 flex justify-evenly items-center flex-col lg:flex-row glass pl-7">
                 <div className='w-full font-mono'>
                     <h1 className='text-2xl font-bold'>
                         <TypeAnimation
@@ -40,7 +40,7 @@ export default function Main(){
                     </a>
                 </div>
                 <div className='w-full flex justify-center'>
-                    <img className='w-96 h-96 object-cover rounded-full' src={zaki} alt="" />
+                    <img className='w-72 h-72 object-cover rounded-full border-4 border-white shadow-lg' src={zaki} alt="" />
                 </div>
             </div>
             <Know/>

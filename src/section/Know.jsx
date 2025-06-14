@@ -9,7 +9,7 @@ export default function Know(){
                 <h1 className='text-2xl font-mono font-bold text-left'>Experience</h1>
             </div>
             <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4">
-                <div className='w-full bg-gray-600'>
+                <div className='w-full glass p-3'>
                     <img className='h-56 w-full object-cover' src={zaki4} alt="" /> 
                     <div className='p-5'>
                         <h1 className='font-mono text-lg font-semibold'>Organization</h1>
@@ -20,7 +20,7 @@ export default function Know(){
                         </ul>
                     </div>
                 </div>
-                <div className='w-full bg-gray-600'>
+                <div className='w-full glass p-3'>
                     <img className='h-56 w-full object-cover' src={zaki} alt="" /> 
                     <div className='p-5'>
                         <h1 className='font-mono text-lg font-semibold'>Volunteer</h1>
@@ -30,7 +30,7 @@ export default function Know(){
                         </ul>
                     </div>
                 </div>
-                <div className='w-full bg-gray-600'>
+                <div className='w-full glass p-3'>
                     <img className='h-56 w-full object-cover' src={zaki2} alt="" /> 
                     <div className='p-5'>
                         <h1 className='font-mono text-lg font-semibold'>International Conference</h1>

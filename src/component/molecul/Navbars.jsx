@@ -2,131 +2,94 @@ import React from "react";
 import {
   Navbar,
   MobileNav,
-  Typography,
   IconButton,
+  Typography,
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
-import { Link as Linkdom } from 'react-scroll';
- 
+import { Link as ScrollLink } from "react-scroll";
+
 export default function Navbars() {
   const [openNav, setOpenNav] = React.useState(false);
- 
+
   React.useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false),
-    );
+    const handleResize = () => window.innerWidth >= 960 && setOpenNav(false);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
- 
+
+  const navItems = [
+    { label: "Home", to: "/", isRoute: true },
+    { label: "Projects", to: "Project", offset: -50 },
+    { label: "Awards", to: "Award", offset: -70 },
+  ];
+
   const navList = (
-    <ul className="flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <Link to='/' className="flex items-center">
-          Home
-        </Link>
-      </Typography>
-      <Linkdom 
-        className="nav-link"
-        to="Project"
-        spy={true}
-        smooth={true}
-        offset={-50}
-        duration={500}
-      >
+    <ul className="flex flex-col lg:flex-row gap-4 items-center">
+      {navItems.map(({ label, to, isRoute = false, offset = -60 }, idx) => (
         <Typography
+          key={idx}
           as="li"
           variant="small"
-          color="blue-gray"
-          className="p-1 font-normal"
+          className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer"
         >
-          <a href="#" className="flex items-center">
-            Project
-          </a>
+          {isRoute ? (
+            <Link to={to}>{label}</Link>
+          ) : (
+            <ScrollLink
+              to={to}
+              smooth={true}
+              duration={500}
+              offset={offset}
+              spy={true}
+            >
+              {label}
+            </ScrollLink>
+          )}
         </Typography>
-      </Linkdom>
-      <Linkdom
-        className="nav-link"
-        to="Award"
-        spy={true}
-        smooth={true}
-        offset={-70}
-        duration={500}
-      >
-        <Typography
-          as="li"
-          variant="small"
-          color="blue-gray"
-          className="p-1 font-normal"
-        >
-          <a href="#" className="flex items-center">
-            Awards
-          </a>
-        </Typography>
-      </Linkdom>
+      ))}
     </ul>
   );
- 
+
   return (
-      <Navbar className="sticky top-0 bg-black z-10 rounded-none px-4 py-2 lg:px-8 lg:py-4 border-none">
-        <div className="flex items-center justify-between text-blue-gray-900">
-          <Link to='/'>
-            <Typography
-              as="a"
-              href="#"
-              className="mr-4 cursor-pointer py-1.5 font-medium"
+    <Navbar className="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-none rounded-none shadow-md px-4 py-3 lg:px-8 lg:py-4">
+      <div className="flex items-center justify-between text-white">
+        <Link to="/">
+          <Typography className="text-xl font-bold tracking-wide">
+            Zakifr
+          </Typography>
+        </Link>
+        <div className="hidden lg:block">{navList}</div>
+        <IconButton
+          variant="text"
+          className="lg:hidden text-white"
+          onClick={() => setOpenNav(!openNav)}
+        >
+          {openNav ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              Zakifr
-            </Typography>
-          </Link>
-          <div className="flex items-center gap-4">
-            <div className="mr-4 hidden lg:block">{navList}</div>
-            <IconButton
-              variant="text"
-              className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-              ripple={false}
-              onClick={() => setOpenNav(!openNav)}
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              {openNav ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  className="h-6 w-6"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              )}
-            </IconButton>
-          </div>
-        </div>
-        <MobileNav open={openNav}>
-          {navList}
-        </MobileNav>
-      </Navbar>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
+        </IconButton>
+      </div>
+      <MobileNav open={openNav} className="bg-black text-white px-4">
+        {navList}
+      </MobileNav>
+    </Navbar>
   );
 }

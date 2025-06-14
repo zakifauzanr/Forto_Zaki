@@ -1,10 +1,10 @@
 export default function Achieve(){
     return(
         <div id="Award">
-        <div className='mx-5 lg:mx-12'>
+        <div className='mx-5 lg:mx-10'>
         <h1 className='text-2xl font-mono font-bold my-3 text-center'>Achievement</h1>
-            <div className="flex justify-between items-center">
-            <div>
+            <div className="flex justify-between items-center glass p-5 my-3 text-white w-full transition-shadow hover:shadow-xl">
+            <div className="">
                 <h1 className="text-lg font-semibold">
                     Delegates of Istanbul Youth Summit
                 </h1>
@@ -17,8 +17,8 @@ export default function Achieve(){
             </div>
                 <div className='font-light text-sm text-slate-300'>21 Apr 2021 – 23 Apr 2021 </div>
             </div>
-            <div className="flex justify-between items-center">
-            <div>
+            <div className="flex justify-between items-center glass p-5 my-3 text-white w-full transition-shadow hover:shadow-xl">
+            <div className="">
                 <h1 className="text-lg font-semibold">
                     Delegates of International Wonderfull Education
                 </h1>

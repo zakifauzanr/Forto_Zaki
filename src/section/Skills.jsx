@@ -9,7 +9,7 @@ export default function Skills() {
         <div className="w-full px-5 lg:px-10">
             <h1 className='text-2xl font-mono font-bold text-center'>Skills</h1>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 my-3'>
-                <div className='border border-lg rounded-md h-full shadow p-5 hover:shadow-lg hover:shadow-white'>
+                <div className='glass h-full shadow-lg p-5 relative group hover:bg-white/15 transition-colors duration-300 overflow-hidden'>
                     <div className='flex justify-between'>
                         <h1 className='text-xl font-bold font-mono'>Web Framework</h1>
                         <h1 className='text-md font-thin'>Advanced</h1>
@@ -22,7 +22,7 @@ export default function Skills() {
                         <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faBootstrap}/>
                     </div>
                 </div>
-                <div className='border border-md rounded-md h-full shadow hover:shadow-lg hover:shadow-white p-5'>
+                <div className='glass h-full shadow-lg p-5 relative group hover:bg-white/15 transition-colors duration-300 overflow-hidden'>
                     <div className='flex justify-between'>
                         <h1 className='text-xl font-bold font-mono'>Web Native</h1>
                         <h1 className='text-md font-thin'>Intermediate</h1>
@@ -36,7 +36,7 @@ export default function Skills() {
                         <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faCss3}/>
                     </div>
                 </div>
-                <div className='border border-md rounded-md h-full shadow hover:shadow-lg hover:shadow-white p-5'>
+                <div className='glass h-full shadow-lg p-5 relative group hover:bg-white/15 transition-colors duration-300 overflow-hidden'>
                     <div className='flex justify-between'>
                         <h1 className='text-xl font-bold font-mono'>IT Skills</h1>
                         <h1 className='text-md font-thin'>Beginner</h1>
@@ -48,7 +48,7 @@ export default function Skills() {
                         <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faWordpress}/>
                     </div>
                 </div>
-                <div className='border border-md rounded-md h-full shadow hover:shadow-lg hover:shadow-white p-5'>
+                <div className='glass h-full shadow-lg p-5 relative group hover:bg-white/15 transition-colors duration-300 overflow-hidden'>
                     <div className='flex justify-between'>
                         <h1 className='text-xl font-bold font-mono'>Other Skills</h1>
                         <h1 className='text-md font-thin'>Intermediate</h1>
