@@ -4,7 +4,7 @@ import zaki4 from '../assets/zaki4.jpeg';
 
 export default function Know(){
     return(
-        <div className='px-5 lg:px-40 my-3 w-full'>
+        <div className='px-5 lg:px-40 my-3 w-full' data-aos="fade-up">
             <div className='w-full flex justify-center my-3'>
                 <h1 className='text-2xl font-mono font-bold text-left'>Experience</h1>
             </div>

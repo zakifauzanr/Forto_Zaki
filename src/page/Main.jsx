@@ -9,10 +9,10 @@ import Project from '../section/Project';
 
 export default function Main(){
     return(
-        <div className="w-full min-h-screen  text-white">
-            <div className="mx-7 lg:mx-10 lg:py-16 py-7 flex justify-evenly items-center flex-col lg:flex-row glass pl-7">
-                <div className='w-full font-mono'>
-                    <h1 className='text-2xl font-bold'>
+        <div className="w-full min-h-screen  text-white" data-aos="fade-down">
+            <div className="mx-7 lg:mx-10 lg:py-16 py-7 flex justify-between items-center flex-col gap-5 lg:flex-row glass">
+                <div className='w-full px-5 lg:px-7'>
+                    <h1 className='text-lg lg:text-2xl font-bold'>
                         <TypeAnimation
                             sequence={[
                                 'Hi! Im Zaki.',
@@ -27,8 +27,8 @@ export default function Main(){
                             repeat={Infinity}
                             />
                     </h1>
-                    <h2 className='text-xl font-semibold'>A Front-End Web Developer</h2>
-                    <p className='text-md text-slate-400 font-thin my-1'>
+                    <h2 className='text-md lg:text-xl font-semibold'>A Front-End Web Developer</h2>
+                    <p className='text-sm lg:text-md text-slate-400 font-thin my-1 text-justify'>
                         Im a passionate Front-end Web Developer based in Samarinda, East Borneo, 
                         Currently, I am a 4th year student of the Information Systems Study Program at Mulawarman University.
                     </p>
