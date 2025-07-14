@@ -1,8 +1,10 @@
+import SectionTitle from "../component/atom/SectionTitle";
+
 export default function Achieve(){
     return(
         <div id="Award" data-aos="fade-up">
             <div className='mx-5 lg:mx-10'>
-                <h1 className='text-2xl font-mono font-bold my-3 text-center'>Achievement</h1>
+                <SectionTitle title="Achievement" />
                 <div className="flex justify-between items-center glass p-5 my-3 text-white w-full transition-shadow hover:shadow-xl">
                     <div className="">
                         <h1 className="text-lg font-semibold">

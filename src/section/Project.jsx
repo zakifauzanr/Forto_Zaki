@@ -2,11 +2,12 @@ import { Button } from '@material-tailwind/react';
 import skeleton from '../assets/Project/skeleton.jpg';
 import DataProject from '../data/dataProject';
 import { Link } from 'react-router-dom';
+import SectionTitle from '../component/atom/SectionTitle';
 
 export default function Project(){
     return(
         <div className="mx-10 py-5" id='Project' data-aos="fade-down">
-            <h1 className='text-2xl font-mono font-bold text-center my-3'>Recent Projects</h1>
+            <SectionTitle title="Recent Projects" />
             {DataProject.slice(0,3).map((item,idx)=>(
                 <div key={idx} className="glass my-3 flex flex-col lg:flex-row justify-left items-center p-5 transition-shadow hover:shadow-xl">
                     <img className='w-96 mx-5' src={item.Gambar || skeleton} alt="" />

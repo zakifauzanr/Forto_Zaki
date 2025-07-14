@@ -1,12 +1,13 @@
 import zaki from '../assets/zaki2.jpg';
 import zaki2 from '../assets/zaki.jpg';
 import zaki4 from '../assets/zaki4.jpeg';
+import SectionTitle from '../component/atom/SectionTitle';
 
 export default function Know(){
     return(
         <div className='px-5 lg:px-40 my-3 w-full' data-aos="fade-up">
             <div className='w-full flex justify-center my-3'>
-                <h1 className='text-2xl font-mono font-bold text-left'>Experience</h1>
+                <SectionTitle title="Experience" />
             </div>
             <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4">
                 <div className='w-full glass p-3'>

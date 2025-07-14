@@ -6,8 +6,14 @@ import Skills from '../section/Skills';
 import Know from '../section/Know';
 import Achieve from '../section/Achieve';
 import Project from '../section/Project';
+import { useEffect } from 'react';
 
 export default function Main(){
+
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    },[])
+    
     return(
         <div className="w-full min-h-screen  text-white" data-aos="fade-down">
             <div className="mx-7 lg:mx-10 lg:py-16 py-7 flex justify-between items-center flex-col gap-5 lg:flex-row glass">

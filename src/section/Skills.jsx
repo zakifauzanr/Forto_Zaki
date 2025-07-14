@@ -2,11 +2,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBootstrap, faCss3, faFigma, faHtml5, faJava, faPhp, faPython, faWordpress } from '@fortawesome/free-brands-svg-icons';
 import { faDatabase, faFileExcel, faFileWord } from '@fortawesome/free-solid-svg-icons';
 import { faReact } from '@fortawesome/free-brands-svg-icons/faReact';
+import SectionTitle from '../component/atom/SectionTitle';
 
 export default function Skills() {
     return (
         <div className="w-full px-5 lg:px-10 my-5" data-aos="fade-up">
-            <h1 className='text-2xl font-mono font-bold text-center'>Skills</h1>
+            <SectionTitle title="Skills" />
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 my-3'>
                 <div className='glass h-full shadow-lg p-5 relative group hover:bg-white/15 transition-colors duration-300 overflow-hidden'>
                     <div className='flex justify-between'>
