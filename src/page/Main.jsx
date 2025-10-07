@@ -50,7 +50,7 @@ export default function Main(){
                     <img className='w-72 h-72 object-cover rounded-full border-4 border-white shadow-lg' src={zaki} alt="" />
                 </div>
             </div>
-            <Work/>
+            {/* <Work/> */}
             <Know/>
             <Skills/>
             <Achieve/>
