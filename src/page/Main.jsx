@@ -6,6 +6,7 @@ import Skills from '../section/Skills';
 import Know from '../section/Know';
 import Achieve from '../section/Achieve';
 import Project from '../section/Project';
+import Work from '../section/Work';
 import { useEffect } from 'react';
 
 export default function Main(){
@@ -16,7 +17,7 @@ export default function Main(){
     
     return(
         <div className="w-full min-h-screen  text-white" data-aos="fade-down">
-            <div className="mx-7 lg:mx-10 lg:py-16 py-7 flex justify-between items-center flex-col gap-5 lg:flex-row glass">
+            <div className="mx-7 lg:mx-10 lg:py-16 py-7 mt-5 flex justify-between items-center flex-col gap-5 lg:flex-row glass">
                 <div className='w-full px-5 lg:px-7'>
                     <h1 className='text-lg lg:text-2xl font-bold'>
                         <TypeAnimation
@@ -49,6 +50,7 @@ export default function Main(){
                     <img className='w-72 h-72 object-cover rounded-full border-4 border-white shadow-lg' src={zaki} alt="" />
                 </div>
             </div>
+            <Work/>
             <Know/>
             <Skills/>
             <Achieve/>

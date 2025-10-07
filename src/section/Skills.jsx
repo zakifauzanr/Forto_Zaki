@@ -3,6 +3,7 @@ import { faBootstrap, faCss3, faFigma, faHtml5, faJava, faPhp, faPython, faWordp
 import { faDatabase, faFileExcel, faFileWord } from '@fortawesome/free-solid-svg-icons';
 import { faReact } from '@fortawesome/free-brands-svg-icons/faReact';
 import SectionTitle from '../component/atom/SectionTitle';
+import { faLaravel } from '@fortawesome/free-brands-svg-icons/faLaravel';
 
 export default function Skills() {
     return (
@@ -18,6 +19,7 @@ export default function Skills() {
                     <p className='text-md font-thin my-1'>Tools</p>
                     <div className='flex flex-row gap-3 my-2'>
                         <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faReact}/>
+                        <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faLaravel}/>
                         <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faDatabase}/>
                         <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faBootstrap}/>
                     </div>

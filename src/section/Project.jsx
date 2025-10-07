@@ -17,14 +17,14 @@ export default function Project(){
                         <div className='my-2 flex justify-between items-center'>
                             <h2 className='text-sm font-thin text-slate-400'><span className='mr-3'>Tools</span>: {item.Tools}</h2>
                             <Button variant='outlined' className='p-2 rounded-md'>
-                                <a href={item.Link}>Live Demo</a>
+                                <a href={item.Link} className='text-white'>Live Demo</a>
                             </Button>
                         </div>
                     </div>
                 </div>
             ))}
             <div className='text-center'>
-                <Button className='p-2 rounded-md text-center' variant='outlined'><Link to='/All-Project'>More</Link></Button>
+                <Button className='p-2 rounded-md text-white text-center hover:bg-white hover:text-black hover:font-semibold' variant='outlined'><Link to='/all-project'>More</Link></Button>
             </div>
         </div>
     )

@@ -39,7 +39,7 @@ export default function Project(){
                                 <div className='my-2 flex flex-col lg:flex-row justify-between items-center'>
                                     <h2 className='text-sm font-thin text-slate-400'><span className='mr-3'>Tools</span>: {item.Tools}</h2>
                                     <Button variant='outlined' className='p-2 my-3 rounded-md'>
-                                        <a href={item.Link}>Live Demo</a>
+                                        <a href={item.Link} className='text-white'>Live Demo</a>
                                     </Button>
                                 </div>
                             </div>
@@ -81,8 +81,8 @@ export default function Project(){
                         <div className="flex justify-between items-center mt-4">
                             <span className="text-xs text-slate-400">🛠 {item.Tools}</span>
                             <div className="flex gap-2">
-                            <Button size="sm" variant="outlined"><a href={item.Link}>Demo</a></Button>
-                            <Button size="sm" variant="outlined"><a href={item.Github}>GitHub</a></Button>
+                            <Button size="sm" variant="outlined"><a href={item.Link} className='text-white'>Demo</a></Button>
+                            <Button size="sm" variant="outlined"><a href={item.Github} className='text-white'>GitHub</a></Button>
                             </div>
                         </div>
                         </div>
@@ -120,12 +120,12 @@ export default function Project(){
                             <div className="flex gap-3">
                             {item.Link && (
                                 <Button size="sm" variant="outlined">
-                                <a href={item.Link} target="_blank" rel="noopener noreferrer">Live Demo</a>
+                                    <a href={item.Link} className='text-white' target="_blank" rel="noopener noreferrer">Live Demo</a>
                                 </Button>
                             )}
                             {item.Github && (
                                 <Button size="sm" variant="outlined">
-                                <a href={item.Github} target="_blank" rel="noopener noreferrer">GitHub</a>
+                                    <a href={item.Github} className='text-white' target="_blank" rel="noopener noreferrer">GitHub</a>
                                 </Button>
                             )}
                             </div>
@@ -158,7 +158,7 @@ export default function Project(){
                             <div className="flex justify-between items-center mt-4">
                             <span className="text-xs text-slate-400">🛠 {item.Tools}</span>
                             <Button size="sm" variant="outlined">
-                                <a href={item.Link} target="_blank" rel="noopener noreferrer">Demo</a>
+                                <a href={item.Link} className='text-white' target="_blank" rel="noopener noreferrer">Demo</a>
                             </Button>
                             </div>
                         </div>

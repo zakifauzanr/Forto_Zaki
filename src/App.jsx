@@ -8,6 +8,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react'
 import { AnimatePresence, motion } from "framer-motion";
+import Experience from './page/Experience'
 
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path='/' element={ <motion.div {...pageTransition} transition={{ duration: 0.5 }}><Main/></motion.div> }/>
-          <Route path='/All-Project' element={<motion.div {...pageTransition} transition={{ duration: 0.5 }}><Project/></motion.div>}/>
+          <Route path='/all-project' element={<motion.div {...pageTransition} transition={{ duration: 0.5 }}><Project/></motion.div>}/>
+          <Route path='/experience' element={<motion.div {...pageTransition} transition={{ duration: 0.5 }}><Experience/></motion.div>}/>
         </Routes>
       </AnimatePresence>
       <Footers/>

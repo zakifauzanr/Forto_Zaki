@@ -7,7 +7,7 @@ export default function Know(){
     return(
         <div className='px-5 lg:px-40 my-3 w-full' data-aos="fade-up">
             <div className='w-full flex justify-center my-3'>
-                <SectionTitle title="Experience" />
+                <SectionTitle title="Other Experience" />
             </div>
             <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4">
                 <div className='w-full glass p-3'>
