@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import zaki from '../assets/zaki-main.jpg';
+import zaki from '../assets/me2.jpeg';
 import { TypeAnimation } from 'react-type-animation';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Skills from '../section/Skills';
@@ -50,7 +50,7 @@ export default function Main(){
                     <img className='w-72 h-72 object-cover rounded-full border-4 border-white shadow-lg' src={zaki} alt="" />
                 </div>
             </div>
-            {/* <Work/> */}
+            <Work/>
             <Know/>
             <Skills/>
             <Achieve/>
