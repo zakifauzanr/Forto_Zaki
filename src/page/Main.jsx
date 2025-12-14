@@ -17,37 +17,73 @@ export default function Main(){
     
     return(
         <div className="w-full min-h-screen  text-white" data-aos="fade-down">
-            <div className="mx-7 lg:mx-10 lg:py-16 py-7 mt-5 flex justify-between items-center flex-col gap-5 lg:flex-row glass">
+            <div id='Hero' className="relative mx-7 lg:mx-10 lg:py-20 py-10 mt-5 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center glass">
                 <div className='w-full px-5 lg:px-7'>
-                    <h1 className='text-lg lg:text-2xl font-bold'>
-                        <TypeAnimation
-                            sequence={[
-                                'Hi! Im Zaki.',
-                                1000, 
-                                'Hi! Im Zaki Fauzan.',
-                                1000,
-                                'Hi! Im Zaki Fauzan Rabbani.',
-                                1000,
-                            ]}
-                            wrapper="span"
-                            speed={50}
-                            repeat={Infinity}
-                            />
+                    <h1 className="text-2xl lg:text-4xl font-bold leading-tight">
+                    <TypeAnimation
+                        sequence={[
+                        'Hi! I’m Zaki.',
+                        1000,
+                        'Hi! I’m Zaki Fauzan.',
+                        1000,
+                        'Hi! I’m Zaki Fauzan Rabbani.',
+                        1000,
+                        ]}
+                        speed={50}
+                        repeat={Infinity}
+                    />
                     </h1>
-                    <h2 className='text-md lg:text-xl font-semibold'>A Front-End Web Developer</h2>
+
+                    <h2 className="mt-2 text-lg lg:text-xl text-blue-400 font-semibold">Fullstack Developer</h2>
                     <p className='text-sm lg:text-md text-slate-400 font-thin my-1 text-justify'>
-                        Im a passionate Front-end Web Developer based in Samarinda, East Borneo, 
-                        Currently, I am a 4th year student of the Information Systems Study Program at Mulawarman University.
+                        Im a passionate Fullstack Developer based in Samarinda, East Borneo, 
+                        Currently, I am a final year of the Information Systems Study Program at Mulawarman University.
                     </p>
-                    <a href="https://github.com/zackoflonely">
-                        <FontAwesomeIcon style={{ fontSize: '2em' }} className='mr-3' icon={faGithub}/>
-                    </a>
-                    <a href="https://www.linkedin.com/in/zaki-fauzan-rabbani-65b36921a/">
-                        <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faLinkedin}/>
-                    </a>
+                    <div className="mt-6 flex gap-8">
+                        <div>
+                            <h3 className="text-3xl font-bold text-white">1+</h3>
+                            <p className="text-sm text-slate-400">Years Experience</p>
+                        </div>
+                        <div>
+                            <h3 className="text-3xl font-bold text-white">10+</h3>
+                            <p className="text-sm text-slate-400">Finished Projects</p>
+                        </div>
+                    </div>
+                    <div className="mt-8 flex flex-wrap gap-4">
+                        <a
+                            href="https://github.com/zackoflonely"
+                            target="_blank"
+                            className="flex items-center gap-2 px-4 py-2 
+                            rounded-xl border border-white/20 
+                            backdrop-blur-md hover:bg-white/10 
+                            transition-all duration-300"
+                            >
+                            <FontAwesomeIcon icon={faGithub} />
+                            <span className="text-sm">GitHub</span>
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/zaki-fauzan-rabbani-65b36921a/"
+                            target="_blank"
+                            className="flex items-center gap-2 px-4 py-2 
+                            rounded-xl border border-white/20 
+                            backdrop-blur-md hover:bg-white/10 
+                            transition-all duration-300"
+                            >
+                            <FontAwesomeIcon icon={faLinkedin} />
+                            <span className="text-sm">LinkedIn</span>
+                        </a>
+                    </div>
                 </div>
-                <div className='w-full flex justify-center'>
-                    <img className='w-72 h-72 object-cover rounded-full border-4 border-white shadow-lg' src={zaki} alt="" />
+                <div className="relative flex justify-center">
+                    <div className="absolute -inset-4 bg-blue-500/20 rounded-full blur-3xl"></div>
+
+                    <img
+                        src={zaki}
+                        alt="Zaki Fauzan"
+                        className="relative w-72 h-72 lg:w-80 lg:h-80 
+                        object-cover rounded-full 
+                        border-4 border-white/30 shadow-2xl"
+                    />
                 </div>
             </div>
             <Work/>

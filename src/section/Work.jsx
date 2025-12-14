@@ -8,6 +8,7 @@ export default function Work() {
       role: "IT Software Developer Intern",
       company: "PT UPSENSE Teknologi Indonesia",
       period: "Oct 2025 - Present",
+      isCurrent: true,
       description:
         "Mengelola dan memelihara aplikasi web berbasis Laravel, mengembangkan fitur baru sesuai kebutuhan klien, serta memberikan rekomendasi teknis untuk meningkatkan fungsionalitas dan pengalaman pengguna.",
     },
@@ -16,6 +17,7 @@ export default function Work() {
       role: "Full-stack Developer Intern",
       company: "Telkom Indonesia",
       period: "Feb - Aug 2025",
+      isCurrent: false,
       description:
         "Mengembangkan dan memelihara komponen inti dashboard internal berbasis web untuk memonitor dan mengelola data kontrak. Menangani dua proyek website full-stack dan satu bot Telegram untuk pengingat kontrak. Melakukan migrasi data lebih dari 10.000 entri ke MySQL dengan menjaga integritas dan konsistensi data.",
     },
@@ -24,13 +26,14 @@ export default function Work() {
       role: "IT Support",
       company: "UPTD DISPORA Provinsi Kalimantan Timur",
       period: "Feb - Apr 2024",
+      isCurrent: false,
       description:
         "Melakukan audit inventaris dan pendaftaran surat internal, serta menjadi konseptor dan pengembang sistem arsip berbasis web untuk digitalisasi dokumen organisasi. Juga menyusun dan menyampaikan hasil analisis regulasi daerah terbaru kepada staf dan stakeholder.",
     },
   ];
 
   return (
-    <section className="mt-10 px-6 lg:px-16 relative" data-aos="fade-up">
+    <section id="Work" className="mt-10 px-6 lg:px-16 relative" data-aos="fade-up">
       {/* Section Title */}
       <div className="text-center mb-8">
         <SectionTitle title="Work Experience" />
@@ -50,7 +53,7 @@ export default function Work() {
       </div> */}
 
       {/* Timeline */}
-      <div className="relative border-l border-gray-300 dark:border-gray-700 ml-4 space-y-10">
+      <div className="relative border-l border-gray-300 dark:border-gray-700 ml-4 space-y-7 group-hover:border-blue-500 transition-colors">
         {experiences.map((exp) => (
           <div key={exp.id} className="relative pl-8 group">
             {/* Dot indicator */}
@@ -58,14 +61,23 @@ export default function Work() {
 
             {/* Card */}
             <div className="bg-white/70 dark:bg-gray-800/60 backdrop-blur-md border border-gray-200 dark:border-gray-700 p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                {exp.role}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 font-medium">
-                {exp.company} •{" "}
-                <span className="italic text-sm">{exp.period}</span>
+              <div className="flex items-center justify-between">
+                <h3 className="text-xl font-semibold tracking-tight">
+                  {exp.role}
+                </h3>
+                {exp.isCurrent && (
+                  <span className="inline-block mb-2 px-3 py-1 text-xs font-semibold 
+                  rounded-full bg-green-500/10 text-green-500">
+                    Current
+                  </span>
+                )}
+              </div>
+              <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                <span className="font-medium">{exp.company}</span>
+                <span className="mx-2">•</span>
+                <span className="italic text-xs">{exp.period}</span>
               </p>
-              <p className="mt-3 text-gray-700 dark:text-gray-400 text-sm leading-relaxed">
+              <p className="mt-3 list-disc list-inside space-y-1 text-sm text-gray-700 dark:text-gray-400 leading-relaxed">
                 {exp.description}
               </p>
             </div>
