@@ -12,19 +12,24 @@ export default function Project(){
     useEffect(()=>{
         window.scrollTo(0, 0);
     },[])
+
+    const currentYear = new Date().getFullYear();
+    const projectCurrentYear = DataProject.filter(project => project.Tahun === currentYear.toString()).length;
+    const totalProjects = DataProject.length;
     return(
         <div className="mx-3 lg:mx-10 py-5">
             <h1 className='text-2xl font-mono font-bold text-center my-3'>All Projects</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 my-6">
                 <div className="glass border border-white/20 rounded-xl p-5 shadow-lg hover:bg-white/10 transition duration-300">
-                    <h2 className="text-lg font-bold text-slate-300">Project 2024</h2>
-                    <p className="text-3xl font-extrabold text-white">4</p>
+                    <h2 className="text-lg font-bold text-slate-300">Project {currentYear}</h2>
+                    <p className="text-3xl font-extrabold text-white">{projectCurrentYear}</p>
                 </div>
                 <div className="glass border border-white/20 rounded-xl p-5 shadow-lg hover:bg-white/10 transition duration-300">
                     <h2 className="text-lg font-bold text-slate-300">Total Projects</h2>
-                    <p className="text-3xl font-extrabold text-white">9</p>
+                    <p className="text-3xl font-extrabold text-white">{totalProjects}</p>
                 </div>
             </div>
+            {/* ===== Big Project ===== */}
             <div className='mb-3'>
                 <div>
                     <h1 className='text-2xl font-mono font-bold text-left my-3'>Big Projects</h1>
@@ -66,6 +71,34 @@ export default function Project(){
                     </div>
                 </div>
             </div>
+            {/* ===== Internship Project ===== */}
+            <div className="mt-14 mb-10">
+                <h1 className="text-3xl font-extrabold font-mono text-left mb-6">
+                    💼 Internship Project
+                </h1>
+                <div className="grid gap-6 grid-cols-1 lg:grid-cols-2">
+                    {DataProject.map((item,idx)=>
+                        item.Tipe === "Internship" && (
+                            <div key={idx} className="bg-white/5 border border-white/10 rounded-xl shadow-md overflow-hidden">
+                                <div className='p-5 h-36 w-full'>
+                                    <h1 className='text-xl font-semibold font-mono'><span>Nama Project </span>: {item.Nama}</h1>
+                                    <p className='text-md font-thin text-slate-100'><span className='mr-3'>Deskripsi </span>: {item.Deskripsi}</p>
+                                </div>
+                                <div className='p-5 flex flex-col lg:flex-row justify-between items-center'>
+                                    <h2 className='text-sm font-thin text-slate-400'><span className='mr-3'>Tools</span>: {item.Tools}</h2>
+                                    <Button variant='outlined' className='p-2 my-3 rounded-md'>
+                                        <a href={item.Link} className='text-white'>Live Demo</a>
+                                    </Button>
+                                </div>
+                                <div className='w-full overflow-hidden'>
+                                    <img className='w-full h-full object-cover object-top object-left transition-transform duration-300 hover:scale-105' src={item.Gambar || skeleton} alt="" />
+                                </div>
+                            </div>
+                        )
+                    )}
+                </div>
+            </div>
+            {/* ===== Recent Projects ===== */}
             <div className=''>
                 <h1 className="text-3xl font-bold font-mono mt-10 mb-4 text-center">🧩 Recent Projects</h1>
                 <div className="grid gap-6 grid-cols-1 lg:grid-cols-2">
@@ -76,21 +109,22 @@ export default function Project(){
                             <img src={item.Gambar || skeleton} className="w-full h-full object-cover object-top object-left transition-transform duration-300 hover:scale-105" />
                         </div>
                         <div className="p-5">
-                        <h3 className="text-xl font-bold text-white">{item.Nama}</h3>
-                        <p className="text-sm text-slate-300 mt-1">{item.Deskripsi}</p>
-                        <div className="flex justify-between items-center mt-4">
-                            <span className="text-xs text-slate-400">🛠 {item.Tools}</span>
-                            <div className="flex gap-2">
-                            <Button size="sm" variant="outlined"><a href={item.Link} className='text-white'>Demo</a></Button>
-                            <Button size="sm" variant="outlined"><a href={item.Github} className='text-white'>GitHub</a></Button>
+                            <h3 className="text-xl font-bold text-white">{item.Nama}</h3>
+                            <p className="text-sm text-slate-300 mt-1">{item.Deskripsi}</p>
+                            <div className="flex justify-between items-center mt-4">
+                                <span className="text-xs text-slate-400">🛠 {item.Tools}</span>
+                                <div className="flex gap-2">
+                                <Button size="sm" variant="outlined"><a href={item.Link} className='text-white'>Demo</a></Button>
+                                <Button size="sm" variant="outlined"><a href={item.Github} className='text-white'>GitHub</a></Button>
+                                </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                     )
                 )}
                 </div>
             </div>
+            {/* ===== Trial Project ===== */}
             <div className="flex flex-col gap-8 my-8">
                 {DataProject.map((item, idx) =>
                     ["Studi Independen", "Trial Project"].includes(item.Tipe) && (
@@ -135,6 +169,7 @@ export default function Project(){
                     )
                 )}
             </div>
+            {/* ===== Event Project ===== */}
             <div>
                 <h1 className="text-3xl font-bold font-mono mt-10 mb-6 text-center">📅 Event Projects</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">

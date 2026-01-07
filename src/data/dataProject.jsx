@@ -17,6 +17,7 @@ const DataProject = [
         Link:'https://dashboard.inforsa-unmul.org',
         Github:'',
         Tipe:'Organization',
+        Tahun: '2025',
         Gambar:dashboardInforsa,
     },
     {
@@ -26,7 +27,8 @@ const DataProject = [
         Tools:'React Vite JS, MySql, Tailwind CS, NodeJS, Express',
         Link:'https://inforsa-unmul.org',
         Github:'',
-        Tipe:'Organization',
+        Tipe:'Organization', 
+        Tahun: '2024',
         Gambar:inforsa,
     },
     {
@@ -37,6 +39,7 @@ const DataProject = [
         Link:'',
         Github:'https://github.com/final-project-satu/like-news',
         Tipe:'Studi Independen',
+        Tahun: '2023',
         Gambar:likenews,
     },
     {
@@ -47,6 +50,7 @@ const DataProject = [
         Link:'',
         Github:'https://github.com/FP-2/fp-2-ecommerce',
         Tipe:'Studi Independen',
+        Tahun: '2023',
         Gambar:ecommerce,
     },
     {
@@ -56,6 +60,7 @@ const DataProject = [
         Link:'',
         Github:'https://github.com/FP3-Hacktiv/react-native-hotel-app',
         Tipe:'Studi Independen',
+        Tahun: '2023',
         Gambar:null,
     },
     {
@@ -66,6 +71,7 @@ const DataProject = [
         Link:'https://insevent.inforsa-unmul.org',
         Github:'',
         Tipe:'Event',
+        Tahun: '2023',
         Gambar:insevent,
     },
     {
@@ -76,6 +82,7 @@ const DataProject = [
         Link:'',
         Github:'',
         Tipe:'Trial Project',
+        Tahun: '2023',
         Gambar:ournews,
     },
     {
@@ -86,6 +93,7 @@ const DataProject = [
         Link:'https://kilang-beach.netlify.app',
         Github:'',
         Tipe:'Trial Project',
+        Tahun: '2023',
         Gambar:kilang,
     },
     {
@@ -97,17 +105,41 @@ const DataProject = [
         Link:'https://sikab-kaltim.netlify.app/',
         Github:'https://github.com/zackoflonely/SIKAB',
         Tipe:'Recent',
+        Tahun: '2024',
         Gambar:sikab,
     },
     {
         Nama: 'Web Arsip Surat',
         Deskripsi:`Website ini merupakan website dashboard yang difungsikan untuk mendigitalisasi proses pengarsipan surat. Fitur yang terdapat dalam website ini berupa pencarian, pengelompokan, penyaringan hingga memberikan detail informasi setiap surat yang ada.`,
         Tools:'ReactJS, NodeJS, TailwindCSS, Mysql',
-        Mitra:'DInas Pemuda dan Olahraga Provinsi Kalimantan Timur dan Kantor Desa Bunga Putih',
+        Mitra:'Dinas Pemuda dan Olahraga Provinsi Kalimantan Timur dan Kantor Desa Bunga Putih',
         Link:'',
         Github:'https://github.com/zackoflonely/BungaPutih_Arsip',
         Tipe:'Recent',
+        Tahun: '2024',
         Gambar:bungaputih,
+    },
+    {
+        Nama: 'Dashboard Performances Tracking Contract',
+        Deskripsi:`Website Dashboard yang ditujukan untuk menampilkan dan mengelola informasi performa account manager.`,
+        Tools:'Laravel, Bootstrap, Nginx, Mysql',
+        Mitra:'Telkom Witel Kaltimtara',
+        Link:'',
+        Github:'',
+        Tipe:'Internship',
+        Tahun: '2025',
+        Gambar:null,
+    },
+    {
+        Nama: 'HRIS',
+        Deskripsi:`Website yang ditujukan untuk pengelolaan sumber daya manusia dalam sebuah perusahaan.`,
+        Tools:'ReactTSX, NestJS, TailwindCSS, PostgreSQL',
+        Mitra:'PT. UPSENSE Teknologi Indonesia',
+        Link:'',
+        Github:'',
+        Tipe:'Internship',
+        Tahun: '2025',
+        Gambar:null,
     },
 ]
 
