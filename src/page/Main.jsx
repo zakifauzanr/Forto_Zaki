@@ -54,7 +54,7 @@ export default function Main(){
                             href="https://github.com/zackoflonely"
                             target="_blank"
                             className="rounded-xl border border-white/20 
-                            backdrop-blur-md hover:bg-white/10 
+                            hover:bg-white/10 
                             transition-all duration-300"
                             >
                             <button className='flex items-center gap-2 px-4 py-2'>
@@ -66,7 +66,7 @@ export default function Main(){
                             href="https://www.linkedin.com/in/zaki-fauzan-rabbani-65b36921a/"
                             target="_blank"
                             className="rounded-xl border border-white/20 
-                            backdrop-blur-md hover:bg-white/10 
+                            hover:bg-white/10 
                             transition-all duration-300"
                             >
                             <button className='flex items-center gap-2 px-4 py-2'>
