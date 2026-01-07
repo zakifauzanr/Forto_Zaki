@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionTitle from "../component/atom/SectionTitle";
 import DataExperience from "../data/dataExperience";
@@ -32,6 +32,15 @@ const positions = {
   },
 };
 
+const mobilePositions = {
+  center: {
+    x: 0,
+    scale: 1,
+    rotateY: 0,
+    opacity: 1,
+  },
+};
+
 ExperienceCard.propTypes = {
   active: PropTypes.bool.isRequired,
   data: PropTypes.shape({
@@ -47,15 +56,18 @@ ExperienceCard.propTypes = {
 export default function Work() {
   const [activeIndex, setActiveIndex] = useState(0);
   const total = DataExperience.length;
+  const isMobile = useIsMobile();
 
   const leftIndex = (activeIndex - 1 + total) % total;
   const rightIndex = (activeIndex + 1) % total;
 
-  const cards = [
-    { slot: "left", data: DataExperience[leftIndex] },
-    { slot: "center", data: DataExperience[activeIndex] },
-    { slot: "right", data: DataExperience[rightIndex] },
-  ];
+  const cards = isMobile
+  ? [{ slot: "center", data: DataExperience[activeIndex] }]
+  : [
+      { slot: "left", data: DataExperience[leftIndex] },
+      { slot: "center", data: DataExperience[activeIndex] },
+      { slot: "right", data: DataExperience[rightIndex] },
+    ];
 
   return (
     <section id="Work" className="mt-20 px-6 lg:px-16">
@@ -74,10 +86,16 @@ export default function Work() {
           {cards.map(({ slot, data }) => (
             <motion.div
               key={data.id}
-              className="absolute w-[320px]"
+              className="absolute -translate-x-1/2"
               style={{ transformStyle: "preserve-3d" }}
-              initial={positions[slot]}
-              animate={positions[slot]}
+              initial={ isMobile
+                ? mobilePositions.center
+                : positions[slot]
+              }
+              animate={isMobile
+                ? mobilePositions.center
+                : positions[slot]
+              }
               exit={{ opacity: 0 }}
               transition={{ type: "spring", stiffness: 260, damping: 30 }}
             >
@@ -106,10 +124,26 @@ export default function Work() {
   );
 }
 
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(
+    window.innerWidth < breakpoint
+  );
+
+  useEffect(() => {
+    const onResize = () =>
+      setIsMobile(window.innerWidth < breakpoint);
+
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [breakpoint]);
+
+  return isMobile;
+}
+
 function ExperienceCard({ data, active }) {
   return (
     <div
-      className={`p-6 rounded-2xl w-96 backdrop-blur-md transition
+      className={`p-6 rounded-2xl lg:w-96 backdrop-blur-md transition
       ${
         active
           ? "bg-white/90 dark:bg-gray-800/80 shadow-2xl ring-2 ring-blue-500/40"
@@ -119,7 +153,7 @@ function ExperienceCard({ data, active }) {
       <div className="flex justify-between">
         <h3 className="text-lg font-semibold">{data.role}</h3>
         {data.isCurrent && (
-          <span className="px-2 py-1 text-xs rounded-full bg-green-500/10 text-green-500">
+          <span className="flex justify-center items-center px-2 py-1 text-xs rounded-full bg-green-500/10 text-green-500">
             Current
           </span>
         )}

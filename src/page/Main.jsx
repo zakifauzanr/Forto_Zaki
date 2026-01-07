@@ -53,24 +53,26 @@ export default function Main(){
                         <a
                             href="https://github.com/zackoflonely"
                             target="_blank"
-                            className="flex items-center gap-2 px-4 py-2 
-                            rounded-xl border border-white/20 
+                            className="rounded-xl border border-white/20 
                             backdrop-blur-md hover:bg-white/10 
                             transition-all duration-300"
                             >
-                            <FontAwesomeIcon icon={faGithub} />
-                            <span className="text-sm">GitHub</span>
+                            <button className='flex items-center gap-2 px-4 py-2'>
+                                <FontAwesomeIcon icon={faGithub} />
+                                <span className="text-sm">GitHub</span>
+                            </button>
                         </a>
                         <a
                             href="https://www.linkedin.com/in/zaki-fauzan-rabbani-65b36921a/"
                             target="_blank"
-                            className="flex items-center gap-2 px-4 py-2 
-                            rounded-xl border border-white/20 
+                            className="rounded-xl border border-white/20 
                             backdrop-blur-md hover:bg-white/10 
                             transition-all duration-300"
                             >
-                            <FontAwesomeIcon icon={faLinkedin} />
-                            <span className="text-sm">LinkedIn</span>
+                            <button className='flex items-center gap-2 px-4 py-2'>
+                                <FontAwesomeIcon icon={faLinkedin} />
+                                <span className="text-sm">LinkedIn</span>
+                            </button>
                         </a>
                     </div>
                 </div>
