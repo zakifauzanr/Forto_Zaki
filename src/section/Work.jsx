@@ -1,89 +1,138 @@
-// import { Link } from "react-router-dom";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import SectionTitle from "../component/atom/SectionTitle";
+import DataExperience from "../data/dataExperience";
+import PropTypes from "prop-types";
+
+const CARD_WIDTH = 384;
+const GAP = 40;
+const OFFSET = CARD_WIDTH + GAP;
+
+const positions = {
+  left: {
+    x: -OFFSET,
+    rotateY: 30,
+    scale: 0.9,
+    z: -160,
+    opacity: 0.8,
+  },
+  center: {
+    x: 0,
+    rotateY: 0,
+    scale: 1,
+    z: 0,
+    opacity: 1,
+  },
+  right: {
+    x: OFFSET,
+    rotateY: -30,
+    scale: 0.9,
+    z: -160,
+    opacity: 0.8,
+  },
+};
+
+ExperienceCard.propTypes = {
+  active: PropTypes.bool.isRequired,
+  data: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    role: PropTypes.string.isRequired,
+    company: PropTypes.string.isRequired,
+    period: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    isCurrent: PropTypes.bool,
+  }).isRequired,
+};
 
 export default function Work() {
-  const experiences = [
-    {
-      id: 1,
-      role: "IT Software Developer Intern",
-      company: "PT UPSENSE Teknologi Indonesia",
-      period: "Oct 2025 - Present",
-      isCurrent: true,
-      description:
-        "Mengelola dan memelihara aplikasi web berbasis Laravel, mengembangkan fitur baru sesuai kebutuhan klien, serta memberikan rekomendasi teknis untuk meningkatkan fungsionalitas dan pengalaman pengguna.",
-    },
-    {
-      id: 2,
-      role: "Full-stack Developer Intern",
-      company: "Telkom Indonesia",
-      period: "Feb - Aug 2025",
-      isCurrent: false,
-      description:
-        "Mengembangkan dan memelihara komponen inti dashboard internal berbasis web untuk memonitor dan mengelola data kontrak. Menangani dua proyek website full-stack dan satu bot Telegram untuk pengingat kontrak. Melakukan migrasi data lebih dari 10.000 entri ke MySQL dengan menjaga integritas dan konsistensi data.",
-    },
-    {
-      id: 3,
-      role: "IT Support",
-      company: "UPTD DISPORA Provinsi Kalimantan Timur",
-      period: "Feb - Apr 2024",
-      isCurrent: false,
-      description:
-        "Melakukan audit inventaris dan pendaftaran surat internal, serta menjadi konseptor dan pengembang sistem arsip berbasis web untuk digitalisasi dokumen organisasi. Juga menyusun dan menyampaikan hasil analisis regulasi daerah terbaru kepada staf dan stakeholder.",
-    },
+  const [activeIndex, setActiveIndex] = useState(0);
+  const total = DataExperience.length;
+
+  const leftIndex = (activeIndex - 1 + total) % total;
+  const rightIndex = (activeIndex + 1) % total;
+
+  const cards = [
+    { slot: "left", data: DataExperience[leftIndex] },
+    { slot: "center", data: DataExperience[activeIndex] },
+    { slot: "right", data: DataExperience[rightIndex] },
   ];
 
   return (
-    <section id="Work" className="mt-10 px-6 lg:px-16 relative" data-aos="fade-up">
-      {/* Section Title */}
-      <div className="text-center mb-8">
+    <section id="Work" className="mt-20 px-6 lg:px-16">
+      <div className="text-center mb-12">
         <SectionTitle title="Work Experience" />
-        <p className="text-gray-500 dark:text-gray-400 mt-1 text-sm">
+        <p className="text-gray-500 text-sm">
           Pengalaman saya pada bidang teknologi
         </p>
       </div>
 
-      {/* Link */}
-      {/* <div className="flex justify-end mb-6">
-        <Link
-          to="/experience"
-          className="text-blue-500 dark:text-blue-400 font-medium hover:underline hover:translate-x-1 transition-all"
+      <div
+        className="relative flex justify-center items-center h-[420px] overflow-hidden"
+        style={{ perspective: 1200 }}
+      >
+        <AnimatePresence mode="popLayout">
+          {cards.map(({ slot, data }) => (
+            <motion.div
+              key={data.id}
+              className="absolute w-[320px]"
+              style={{ transformStyle: "preserve-3d" }}
+              initial={positions[slot]}
+              animate={positions[slot]}
+              exit={{ opacity: 0 }}
+              transition={{ type: "spring", stiffness: 260, damping: 30 }}
+            >
+              <ExperienceCard data={data} active={slot === "center"} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </div>
+
+      {/* Navigation */}
+      <div className="flex justify-center gap-4 mt-10">
+        <button
+          onClick={() => setActiveIndex((i) => (i - 1 + total) % total)}
+          className="px-4 py-2 rounded-full border hover:bg-white/10"
         >
-          See More →
-        </Link>
-      </div> */}
-
-      {/* Timeline */}
-      <div className="relative border-l border-gray-300 dark:border-gray-700 ml-4 space-y-7 group-hover:border-blue-500 transition-colors">
-        {experiences.map((exp) => (
-          <div key={exp.id} className="relative pl-8 group">
-            {/* Dot indicator */}
-            <div className="absolute -left-4 top-2 w-3.5 h-3.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-2 border-white dark:border-gray-900 shadow-md group-hover:scale-125 transition-transform" />
-
-            {/* Card */}
-            <div className="bg-white/70 dark:bg-gray-800/60 backdrop-blur-md border border-gray-200 dark:border-gray-700 p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="flex items-center justify-between">
-                <h3 className="text-xl font-semibold tracking-tight">
-                  {exp.role}
-                </h3>
-                {exp.isCurrent && (
-                  <span className="inline-block mb-2 px-3 py-1 text-xs font-semibold 
-                  rounded-full bg-green-500/10 text-green-500">
-                    Current
-                  </span>
-                )}
-              </div>
-              <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                <span className="font-medium">{exp.company}</span>
-                <span className="mx-2">•</span>
-                <span className="italic text-xs">{exp.period}</span>
-              </p>
-              <p className="mt-3 list-disc list-inside space-y-1 text-sm text-gray-700 dark:text-gray-400 leading-relaxed">
-                {exp.description}
-              </p>
-            </div>
-          </div>
-        ))}
+          ← Prev
+        </button>
+        <button
+          onClick={() => setActiveIndex((i) => (i + 1) % total)}
+          className="px-4 py-2 rounded-full border hover:bg-white/10"
+        >
+          Next →
+        </button>
       </div>
     </section>
+  );
+}
+
+function ExperienceCard({ data, active }) {
+  return (
+    <div
+      className={`p-6 rounded-2xl w-96 backdrop-blur-md transition
+      ${
+        active
+          ? "bg-white/90 dark:bg-gray-800/80 shadow-2xl ring-2 ring-blue-500/40"
+          : "bg-white/60 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700"
+      }`}
+    >
+      <div className="flex justify-between">
+        <h3 className="text-lg font-semibold">{data.role}</h3>
+        {data.isCurrent && (
+          <span className="px-2 py-1 text-xs rounded-full bg-green-500/10 text-green-500">
+            Current
+          </span>
+        )}
+      </div>
+
+      <p className="mt-1 text-sm text-gray-500">
+        <span className="font-medium">{data.company}</span> •{" "}
+        <span className="italic">{data.period}</span>
+      </p>
+
+      <p className="mt-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+        {data.description}
+      </p>
+    </div>
   );
 }

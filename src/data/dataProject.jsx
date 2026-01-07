@@ -1,4 +1,5 @@
 import inforsa from '../assets/Project/inforsa2.png';
+import dashboardInforsa from '../assets/Project/dashboard INFORSA/main.png';
 import insevent from '../assets/Project/insevent.jpg';
 import ournews from '../assets/Project/ournews.jpg';
 import likenews from '../assets/Project/likenews.png';
@@ -8,6 +9,16 @@ import bungaputih from '../assets/Project/bungaputih.png';
 import sikab from '../assets/Project/sikab.png';
 
 const DataProject = [
+    {
+        Nama: 'Dashboard Performance INFORSA',
+        Deskripsi:`Sistem Dashboard berbasis Website yang bertujuan untuk memantau dan menganalisis kinerja anggota 
+        dan struktur organisasi selama satu periode.`,
+        Tools:'React Vite JS, MySql, Tailwind CS, NodeJS, Express',
+        Link:'https://dashboard.inforsa-unmul.org',
+        Github:'',
+        Tipe:'Organization',
+        Gambar:dashboardInforsa,
+    },
     {
         Nama: 'INFORSA Website',
         Deskripsi:`Official Website INFORSA yang berada dibawah naungan 

@@ -1,44 +1,31 @@
-import CompanyALogo from "../assets/logo/figma.png";
-
-const DataExperiences = [
+const DataExperience = [
     {
       id: 1,
-      role: "Fullstack Developer",
-      company: "Telkom Indonesia",
-      companyLogo: CompanyALogo,
-      location: "Samarinda, Indonesia",
-      period: "Jan 2024 - Sekarang",
-      description: [
-        "Developed and maintained core components of internal dashboard web applications used by internal teams to monitor and manage contract data.",
-        "Successfully handled two full-stack website projects and one Telegram bot to reminder contracts and notifications.",
-        "Performed data migration of over 10,000 records from legacy sources into a structured MySQL database, ensuring data integrity, consistency, and optimal indexing.",
-        "Designed and implemented dynamic data visualizations using Laravel Blade and chart.",
-        "Created Docker containers for the Laravel projects to simplify local development and ensure consistent environments for future developers.",
-        "Actively solved real world technical issues such as session handling bugs, database relationship conflicts, and performance optimization challenges."
-    ],
-      media: [
-        "/assets/telkom-dashboard.png",
-        "/assets/telkom-team.jpg",
-      ],
-      companyLink: "",
+      role: "IT Software Developer Intern",
+      company: "PT UPSENSE Teknologi Indonesia",
+      period: "Oct 2025 - Present",
+      isCurrent: true,
+      description:
+        "Mengelola dan memelihara aplikasi web berbasis Laravel, mengembangkan fitur baru sesuai kebutuhan klien, serta memberikan rekomendasi teknis untuk meningkatkan fungsionalitas dan pengalaman pengguna.",
     },
     {
       id: 2,
-      role: "Web Developer Intern",
-      company: "Startup Digital",
-      companyLogo: null, // kalau gak ada logo
-      location: "Balikpapan, Indonesia",
-      period: "Jun 2023 - Dec 2023",
-      description: [
-        "Membangun dashboard internal menggunakan React, Express, dan MongoDB.",
-        "Melaksanakan unit testing & QA.",
-      ],
-      media: [
-        "/assets/startup-dashboard.png",
-      ],
-      companyLink: "",
+      role: "Full-stack Developer Intern",
+      company: "Telkom Indonesia",
+      period: "Feb - Aug 2025",
+      isCurrent: false,
+      description:
+        "Mengembangkan dan memelihara komponen inti dashboard internal berbasis web untuk memonitor dan mengelola data kontrak. Menangani dua proyek website full-stack dan satu bot Telegram untuk pengingat kontrak. Melakukan migrasi data lebih dari 10.000 entri ke MySQL dengan menjaga integritas dan konsistensi data.",
     },
-    // Tambahkan pengalaman lainnya
+    {
+      id: 3,
+      role: "IT Support",
+      company: "UPTD DISPORA Provinsi Kalimantan Timur",
+      period: "Feb - Apr 2024",
+      isCurrent: false,
+      description:
+        "Melakukan audit inventaris dan pendaftaran surat internal, serta menjadi konseptor dan pengembang sistem arsip berbasis web untuk digitalisasi dokumen organisasi. Juga menyusun dan menyampaikan hasil analisis regulasi daerah terbaru kepada staf dan stakeholder.",
+    },
   ];
 
-export default DataExperiences;
+export default DataExperience;

@@ -5,6 +5,14 @@ import {
   IconButton,
   Collapse,
 } from "@material-tailwind/react";
+import {
+  Home,
+  Briefcase,
+  Award,
+  LayoutGrid,
+  Menu,
+  X,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { Link as Linkdom } from 'react-scroll';
  
@@ -44,9 +52,7 @@ export default function Navbars() {
             active === "home" ? navItemActive : navItemInactive
           }`}
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor">
-            <path strokeWidth="2" d="M3 12l9-9 9 9v9a3 3 0 01-3 3h-12a3 3 0 01-3-3z" />
-          </svg>
+          <Home className="w-5 h-5" />
 
           {active === "home" && <span className="text-sm">Home</span>}
         </Linkdom>
@@ -64,14 +70,7 @@ export default function Navbars() {
             active === "work" ? navItemActive : navItemInactive
           }`}
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor">
-            <path
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 6h6m-7 4h8m-9 4h10M4 6h16v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"
-            />
-          </svg>
+          <Briefcase className="w-5 h-5" />
 
           {active === "work" && (
             <span className="text-sm">Work</span>
@@ -91,9 +90,7 @@ export default function Navbars() {
             active === "achievement" ? navItemActive : navItemInactive
           }`}
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor">
-            <path strokeWidth="2" d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" />
-          </svg>
+          <Award className="w-5 h-5" />
 
           {active === "achievement" && (
             <span className="text-sm">Achievement</span>
@@ -113,9 +110,7 @@ export default function Navbars() {
             active === "project" ? navItemActive : navItemInactive
           }`}
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor">
-            <rect x="3" y="3" width="18" height="14" rx="2" />
-          </svg>
+          <LayoutGrid className="w-5 h-5" />
 
           {active === "project" && <span className="text-sm">Project</span>}
         </Linkdom>
@@ -142,34 +137,9 @@ export default function Navbars() {
             onClick={() => setOpenNav(!openNav)}
           >
             {openNav ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                className="h-6 w-6"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              <X className="h-6 w-6" />
             ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+              <Menu className="h-6 w-6" />
             )}
           </IconButton>
         </div>

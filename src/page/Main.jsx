@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import zaki from '../assets/me2.jpeg';
+import zaki from '../assets/me-new-2.jpeg';
 import { TypeAnimation } from 'react-type-animation';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Skills from '../section/Skills';
