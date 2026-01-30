@@ -3,8 +3,8 @@ const DataExperience = [
       id: 1,
       role: "IT Software Developer Intern",
       company: "PT UPSENSE Teknologi Indonesia",
-      period: "Oct 2025 - Present",
-      isCurrent: true,
+      period: "Oct - Des 2025",
+      isCurrent: false,
       description:
         "Mengelola dan memelihara aplikasi web berbasis Laravel, mengembangkan fitur baru sesuai kebutuhan klien, serta memberikan rekomendasi teknis untuk meningkatkan fungsionalitas dan pengalaman pengguna.",
     },
