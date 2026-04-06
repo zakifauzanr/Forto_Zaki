@@ -36,8 +36,8 @@ export default function Main(){
 
                     <h2 className="mt-2 text-lg lg:text-xl text-blue-400 font-semibold">Fullstack Developer</h2>
                     <p className='text-sm lg:text-md text-slate-400 font-thin my-1 text-justify'>
-                        Im a passionate Fullstack Developer based in Samarinda, East Borneo, 
-                        Currently, I am a final year of the Information Systems Study Program at Mulawarman University.
+                        Im a passionate Fullstack Developer based in Balikpapan, East Borneo, 
+                        Currently, I am a freshgraduated of the Information Systems Study Program at Mulawarman University.
                     </p>
                     <div className="mt-6 flex gap-8">
                         <div>
