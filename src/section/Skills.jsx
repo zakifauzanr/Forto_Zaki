@@ -1,68 +1,114 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBootstrap, faCss3, faFigma, faHtml5, faJava, faPhp, faPython, faWordpress } from '@fortawesome/free-brands-svg-icons';
+import { faBootstrap, faCss3, faFigma, faHtml5, faJava, faPhp, faPython, faWordpress, faReact, faLaravel } from '@fortawesome/free-brands-svg-icons';
 import { faDatabase, faFileExcel, faFileWord } from '@fortawesome/free-solid-svg-icons';
-import { faReact } from '@fortawesome/free-brands-svg-icons/faReact';
-import SectionTitle from '../component/atom/SectionTitle';
-import { faLaravel } from '@fortawesome/free-brands-svg-icons/faLaravel';
+import { motion } from 'framer-motion';
+
+const skillCategories = [
+  {
+    title: "Web Framework",
+    level: "Advanced",
+    projects: "8 Projects",
+    tools: [
+      { name: "React", icon: faReact, color: "text-[#61DAFB]" },
+      { name: "Laravel", icon: faLaravel, color: "text-[#FF2D20]" },
+      { name: "Database", icon: faDatabase, color: "text-slate-300" },
+      { name: "Bootstrap", icon: faBootstrap, color: "text-[#7952B3]" }
+    ]
+  },
+  {
+    title: "Web Native",
+    level: "Advanced",
+    projects: "8 Projects",
+    tools: [
+      { name: "HTML5", icon: faHtml5, color: "text-[#E34F26]" },
+      { name: "PHP", icon: faPhp, color: "text-[#777BB4]" },
+      { name: "Database", icon: faDatabase, color: "text-slate-300" },
+      { name: "CSS3", icon: faCss3, color: "text-[#1572B6]" }
+    ]
+  },
+  {
+    title: "IT Skills",
+    level: "Beginner",
+    projects: null,
+    tools: [
+      { name: "Python", icon: faPython, color: "text-[#3776AB]" },
+      { name: "Java", icon: faJava, color: "text-[#007396]" },
+      { name: "WordPress", icon: faWordpress, color: "text-[#21759B]" }
+    ]
+  },
+  {
+    title: "Other Skills",
+    level: "Intermediate",
+    projects: null,
+    tools: [
+      { name: "Figma", icon: faFigma, color: "text-[#F24E1E]" },
+      { name: "Excel", icon: faFileExcel, color: "text-[#217346]" },
+      { name: "Word", icon: faFileWord, color: "text-[#2B579A]" }
+    ]
+  }
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
+};
 
 export default function Skills() {
     return (
-        <div className="w-full px-5 lg:px-10 my-5" data-aos="fade-up">
-            <SectionTitle title="Skills" />
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 my-3'>
-                <div className='glass h-full shadow-lg p-5 relative group hover:bg-white/15 transition-colors duration-300 overflow-hidden'>
-                    <div className='flex justify-between'>
-                        <h1 className='text-xl font-bold font-mono'>Web Framework</h1>
-                        <h1 className='text-md font-thin'>Advanced</h1>
-                    </div>
-                    <h2 className='text-lg'>Total Projects = 8</h2>
-                    <p className='text-md font-thin my-1'>Tools</p>
-                    <div className='flex flex-row gap-3 my-2'>
-                        <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faReact}/>
-                        <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faLaravel}/>
-                        <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faDatabase}/>
-                        <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faBootstrap}/>
-                    </div>
-                </div>
-                <div className='glass h-full shadow-lg p-5 relative group hover:bg-white/15 transition-colors duration-300 overflow-hidden'>
-                    <div className='flex justify-between'>
-                        <h1 className='text-xl font-bold font-mono'>Web Native</h1>
-                        <h1 className='text-md font-thin'>Intermediate</h1>
-                    </div>
-                    <h2 className='text-lg'>Total Projects = 8</h2>
-                    <p className='text-md font-thin my-1'>Tools</p>
-                    <div className='flex flex-row gap-3 my-2'>
-                        <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faHtml5}/>
-                        <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faPhp}/>
-                        <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faDatabase}/>
-                        <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faCss3}/>
-                    </div>
-                </div>
-                <div className='glass h-full shadow-lg p-5 relative group hover:bg-white/15 transition-colors duration-300 overflow-hidden'>
-                    <div className='flex justify-between'>
-                        <h1 className='text-xl font-bold font-mono'>IT Skills</h1>
-                        <h1 className='text-md font-thin'>Beginner</h1>
-                    </div>
-                    <p className='text-md font-thin my-1'>Tools</p>
-                    <div className='flex flex-row gap-3 my-2'>
-                        <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faPython}/>
-                        <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faJava}/>
-                        <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faWordpress}/>
-                    </div>
-                </div>
-                <div className='glass h-full shadow-lg p-5 relative group hover:bg-white/15 transition-colors duration-300 overflow-hidden'>
-                    <div className='flex justify-between'>
-                        <h1 className='text-xl font-bold font-mono'>Other Skills</h1>
-                        <h1 className='text-md font-thin'>Intermediate</h1>
-                    </div>
-                    <p className='text-md font-thin my-1'>Tools</p>
-                    <div className='flex flex-row gap-3 my-2'>
-                        <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faFigma}/>
-                        <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faFileExcel}/>
-                        <FontAwesomeIcon style={{ fontSize: '2em' }} icon={faFileWord}/>
-                    </div>
-                </div>
+        <section id="Skills" className="mt-20 px-6 lg:px-16 max-w-7xl mx-auto">
+            <div className="mb-12">
+                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8">Skills & Tools</h2>
+                
+                <motion.div 
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className='grid grid-cols-1 md:grid-cols-2 gap-6'
+                >
+                    {skillCategories.map((category, idx) => (
+                        <motion.div 
+                            key={idx} 
+                            variants={itemVariants}
+                            className="glass p-6 lg:p-8 rounded-2xl flex flex-col gap-6 hover:border-blue-500/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] transition-all duration-300 border border-white/10"
+                        >
+                            {/* Header */}
+                            <div className="flex justify-between items-start">
+                                <div>
+                                    <h3 className="text-xl lg:text-2xl font-bold text-white mb-1">{category.title}</h3>
+                                    {category.projects && (
+                                        <p className="text-sm text-slate-400 font-medium">{category.projects}</p>
+                                    )}
+                                </div>
+                                <span className="px-3 py-1.5 text-xs font-medium text-blue-300 bg-blue-500/10 rounded-full border border-blue-500/20">
+                                    {category.level}
+                                </span>
+                            </div>
+
+                            {/* Tools Grid */}
+                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-auto">
+                                {category.tools.map((tool, i) => (
+                                    <div 
+                                        key={i} 
+                                        className="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors"
+                                    >
+                                        <FontAwesomeIcon icon={tool.icon} className={`text-3xl ${tool.color}`} />
+                                        <span className="text-xs font-medium text-slate-300 mt-1">{tool.name}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    ))}
+                </motion.div>
             </div>
-        </div>
+        </section>
     );
 }

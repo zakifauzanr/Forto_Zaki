@@ -3,10 +3,10 @@ import zaki from '../assets/me-new-2.jpeg';
 import { TypeAnimation } from 'react-type-animation';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Skills from '../section/Skills';
-import Know from '../section/Know';
 import Achieve from '../section/Achieve';
 import Project from '../section/Project';
 import Work from '../section/Work';
+import Connect from '../section/Connect';
 import { useEffect } from 'react';
 
 export default function Main(){
@@ -16,7 +16,7 @@ export default function Main(){
     },[])
     
     return(
-        <div className="w-full min-h-screen  text-white" data-aos="fade-down">
+        <div className="w-full min-h-screen text-white" data-aos="fade-down">
             <div id='Hero' className="relative mx-7 lg:mx-10 lg:py-20 py-10 mt-5 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center glass">
                 <div className='w-full px-5 lg:px-7'>
                     <h1 className="text-2xl lg:text-4xl font-bold leading-tight">
@@ -34,10 +34,12 @@ export default function Main(){
                     />
                     </h1>
 
-                    <h2 className="mt-2 text-lg lg:text-xl text-blue-400 font-semibold">Fullstack Developer</h2>
+                    <h2 className="mt-2 text-lg lg:text-xl text-blue-400 font-semibold">Junior Fullstack Developer</h2>
                     <p className='text-sm lg:text-md text-slate-400 font-thin my-1 text-justify'>
-                        Im a passionate Fullstack Developer based in Balikpapan, East Borneo, 
-                        Currently, I am a freshgraduated of the Information Systems Study Program at Mulawarman University.
+                        Programmer based in Balikpapan, East Borneo, 
+                        Currently. Information Systems graduate with hands-on experience in building
+                        and optimizing systems. Proven ability to develop web-based
+                        applications, automation tools, and AI driven.
                     </p>
                     <div className="mt-6 flex gap-8">
                         <div>
@@ -53,6 +55,7 @@ export default function Main(){
                         <a
                             href="https://github.com/zackoflonely"
                             target="_blank"
+                            rel="noreferrer"
                             className="rounded-xl border border-white/20 
                             hover:bg-white/10 
                             transition-all duration-300"
@@ -65,6 +68,7 @@ export default function Main(){
                         <a
                             href="https://www.linkedin.com/in/zaki-fauzan-rabbani-65b36921a/"
                             target="_blank"
+                            rel="noreferrer"
                             className="rounded-xl border border-white/20 
                             hover:bg-white/10 
                             transition-all duration-300"
@@ -89,10 +93,10 @@ export default function Main(){
                 </div>
             </div>
             <Work/>
-            <Know/>
             <Skills/>
             <Achieve/>
             <Project/>
+            <Connect/>
         </div>
     )
 }

@@ -2,30 +2,60 @@ import { Button } from '@material-tailwind/react';
 import skeleton from '../assets/Project/skeleton.jpg';
 import DataProject from '../data/dataProject';
 import { Link } from 'react-router-dom';
-import SectionTitle from '../component/atom/SectionTitle';
 
 export default function Project(){
     return(
-        <div className="mx-10 py-5" id='Project' data-aos="fade-down">
-            <SectionTitle title="Recent Projects" />
-            {DataProject.slice(0,3).map((item,idx)=>(
-                <div key={idx} className="glass my-3 flex flex-col lg:flex-row justify-left items-center p-5 transition-shadow hover:shadow-xl">
-                    <img className='w-96 mx-5' src={item.Gambar || skeleton} alt="" />
-                    <div>
-                        <h1 className='text-xl font-semibold font-mono'><span>Nama Project </span>: {item.Nama}</h1>
-                        <p className='text-md font-thin text-slate-100'><span className='mr-3'>Deskripsi </span>: {item.Deskripsi}</p>
-                        <div className='my-2 flex justify-between items-center'>
-                            <h2 className='text-sm font-thin text-slate-400'><span className='mr-3'>Tools</span>: {item.Tools}</h2>
-                            <Button variant='outlined' className='p-2 rounded-md'>
-                                <a href={item.Link} className='text-white'>Live Demo</a>
-                            </Button>
+        <section id="Project" className="mt-20 px-6 lg:px-16 max-w-7xl mx-auto" data-aos="fade-up">
+            <div className="mb-12">
+                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8">Recent Projects</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {DataProject.slice(0, 3).map((item, idx) => (
+                        <div key={idx} className="glass rounded-2xl overflow-hidden flex flex-col hover:border-blue-500/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] transition-all duration-300 border border-white/10">
+                            {/* Image Container */}
+                            <div className="h-48 overflow-hidden relative">
+                                <img 
+                                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
+                                    src={item.Gambar || skeleton} 
+                                    alt={item.Nama} 
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-60"></div>
+                            </div>
+                            
+                            {/* Content */}
+                            <div className="p-6 flex flex-col flex-grow">
+                                <h3 className="text-xl font-bold text-white mb-3">{item.Nama}</h3>
+                                <p className="text-sm text-slate-300 leading-relaxed mb-6 flex-grow">
+                                    {item.Deskripsi}
+                                </p>
+                                
+                                {/* Footer: Tools & Button */}
+                                <div className="flex justify-between items-end mt-auto pt-4 border-t border-white/10">
+                                    <div className="flex-1">
+                                        <p className="text-xs text-slate-400 mb-1">Tools</p>
+                                        <p className="text-[10px] font-medium text-blue-300">{item.Tools}</p>
+                                    </div>
+                                    <a 
+                                        href={item.Link} 
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="px-4 py-2 text-sm font-medium text-white glass border border-white/20 rounded-lg hover:bg-white/10 transition-colors shrink-0 ml-4"
+                                    >
+                                        Live Demo
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    ))}
                 </div>
-            ))}
-            <div className='text-center'>
-                <Button className='p-2 rounded-md text-white text-center hover:bg-white hover:text-black hover:font-semibold' variant='outlined'><Link to='/all-project'>More</Link></Button>
             </div>
-        </div>
+            
+            <div className="flex justify-center mt-10">
+                <Link to='/all-project'>
+                    <button className="px-6 py-3 rounded-xl border border-white/20 glass hover:bg-white/10 hover:border-white/40 transition-all duration-300 flex items-center gap-2 font-medium text-white shadow-lg">
+                        View More Projects
+                    </button>
+                </Link>
+            </div>
+        </section>
     )
 }

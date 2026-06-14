@@ -1,172 +1,110 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionTitle from "../component/atom/SectionTitle";
 import DataExperience from "../data/dataExperience";
-import PropTypes from "prop-types";
-
-const CARD_WIDTH = 384;
-const GAP = 40;
-const OFFSET = CARD_WIDTH + GAP;
-
-const positions = {
-  left: {
-    x: -OFFSET,
-    rotateY: 30,
-    scale: 0.9,
-    z: -160,
-    opacity: 0.8,
-  },
-  center: {
-    x: 0,
-    rotateY: 0,
-    scale: 1,
-    z: 0,
-    opacity: 1,
-  },
-  right: {
-    x: OFFSET,
-    rotateY: -30,
-    scale: 0.9,
-    z: -160,
-    opacity: 0.8,
-  },
-};
-
-const mobilePositions = {
-  center: {
-    x: 0,
-    scale: 1,
-    rotateY: 0,
-    opacity: 1,
-  },
-};
-
-ExperienceCard.propTypes = {
-  active: PropTypes.bool.isRequired,
-  data: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    role: PropTypes.string.isRequired,
-    company: PropTypes.string.isRequired,
-    period: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    isCurrent: PropTypes.bool,
-  }).isRequired,
-};
 
 export default function Work() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const total = DataExperience.length;
-  const isMobile = useIsMobile();
-
-  const leftIndex = (activeIndex - 1 + total) % total;
-  const rightIndex = (activeIndex + 1) % total;
-
-  const cards = isMobile
-  ? [{ slot: "center", data: DataExperience[activeIndex] }]
-  : [
-      { slot: "left", data: DataExperience[leftIndex] },
-      { slot: "center", data: DataExperience[activeIndex] },
-      { slot: "right", data: DataExperience[rightIndex] },
-    ];
+  const activeExp = DataExperience[activeIndex];
 
   return (
-    <section id="Work" className="mt-20 px-6 lg:px-16">
-      <div className="text-center mb-12">
-        <SectionTitle title="Work Experience" />
-        <p className="text-gray-500 text-sm">
-          Pengalaman saya pada bidang teknologi
-        </p>
-      </div>
+    <section id="Work" className="mt-20 px-6 lg:px-16 max-w-7xl mx-auto">
+      <div className="mb-12">
+        <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8">Experience</h2>
+        
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+          {/* Left Side - List of Companies */}
+          <div className="flex flex-col gap-3 lg:w-1/3">
+            {DataExperience.map((exp, idx) => (
+              <button
+                key={exp.id}
+                onClick={() => setActiveIndex(idx)}
+                className={`flex items-center gap-4 p-4 rounded-2xl transition-all duration-300 text-left border ${
+                  activeIndex === idx
+                    ? "glass border-blue-500/50 shadow-[0_0_15px_rgba(59,130,246,0.15)]"
+                    : "bg-transparent border-transparent hover:bg-white/5 hover:border-white/10"
+                }`}
+              >
+                <div className="w-20 h-20 rounded-xl bg-white flex items-center justify-center shrink-0 overflow-hidden shadow-sm">
+                  {/* Placeholder for Logo */}
+                  {exp.logo ? (
+                    <img src={exp.logo} alt={exp.company} className="w-full h-full object-contain" />
+                  ) : (
+                    <span className="text-xl font-bold text-blue-600">{exp.company.charAt(0)}</span>
+                  )}
+                </div>
+                <div>
+                  <h3 className={`font-semibold ${activeIndex === idx ? "text-blue-400" : "text-slate-200"}`}>
+                    {exp.company}
+                  </h3>
+                  <p className="text-sm text-slate-400">{exp.role}</p>
+                </div>
+              </button>
+            ))}
+          </div>
 
-      <div
-        className="relative flex justify-center items-center h-[420px] overflow-hidden"
-        style={{ perspective: 1200 }}
-      >
-        <AnimatePresence mode="popLayout">
-          {cards.map(({ slot, data }) => (
-            <motion.div
-              key={data.id}
-              className="absolute -translate-x-1/2"
-              style={{ transformStyle: "preserve-3d" }}
-              initial={ isMobile
-                ? mobilePositions.center
-                : positions[slot]
-              }
-              animate={isMobile
-                ? mobilePositions.center
-                : positions[slot]
-              }
-              exit={{ opacity: 0 }}
-              transition={{ type: "spring", stiffness: 260, damping: 30 }}
-            >
-              <ExperienceCard data={data} active={slot === "center"} />
-            </motion.div>
-          ))}
-        </AnimatePresence>
-      </div>
+          {/* Right Side - Details */}
+          <div className="lg:w-2/3 lg:min-h-[400px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeExp.id}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.2 }}
+                className="flex flex-col gap-6 glass p-6 lg:p-8"
+              >
+                {/* Header */}
+                <div className="flex items-start gap-6">
+                  <div className="hidden lg:flex w-16 h-16 rounded-xl bg-white items-center justify-center shrink-0 overflow-hidden shadow-md">
+                    {activeExp.logo ? (
+                      <img src={activeExp.logo} alt={activeExp.company} className="w-full h-full object-contain" />
+                    ) : (
+                      <span className="text-2xl font-bold text-blue-600">{activeExp.logo || activeExp.company.charAt(0)}</span>
+                    )}
+                  </div>
+                  <div>
+                    <p className="text-slate-400 text-sm mb-1 font-medium tracking-wide uppercase">{activeExp.period}</p>
+                    <h2 className="text-2xl lg:text-3xl font-bold text-white mb-2">{activeExp.role}</h2>
+                    <h3 className="text-blue-400 text-lg font-medium">{activeExp.company}</h3>
+                  </div>
+                </div>
 
-      {/* Navigation */}
-      <div className="flex justify-center gap-4 mt-10">
-        <button
-          onClick={() => setActiveIndex((i) => (i - 1 + total) % total)}
-          className="px-4 py-2 rounded-full border hover:bg-white/10"
-        >
-          ← Prev
-        </button>
-        <button
-          onClick={() => setActiveIndex((i) => (i + 1) % total)}
-          className="px-4 py-2 rounded-full border hover:bg-white/10"
-        >
-          Next →
-        </button>
+                {/* Description List */}
+                <ul className="space-y-4 mt-2">
+                  {Array.isArray(activeExp.description) ? (
+                    activeExp.description.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-4 text-slate-300">
+                        <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></span>
+                        <span className="leading-relaxed text-[15px]">{item}</span>
+                      </li>
+                    ))
+                  ) : (
+                    <li className="flex items-start gap-4 text-slate-300">
+                      <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></span>
+                      <span className="leading-relaxed text-[15px]">{activeExp.description}</span>
+                    </li>
+                  )}
+                </ul>
+
+                {/* Skills/Tags */}
+                {activeExp.skills && (
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {activeExp.skills.map((skill, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1.5 text-xs font-medium text-white glass border border-white/20"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
       </div>
     </section>
-  );
-}
-
-function useIsMobile(breakpoint = 768) {
-  const [isMobile, setIsMobile] = useState(
-    window.innerWidth < breakpoint
-  );
-
-  useEffect(() => {
-    const onResize = () =>
-      setIsMobile(window.innerWidth < breakpoint);
-
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, [breakpoint]);
-
-  return isMobile;
-}
-
-function ExperienceCard({ data, active }) {
-  return (
-    <div
-      className={`p-6 rounded-2xl lg:w-96 backdrop-blur-md transition
-      ${
-        active
-          ? "bg-white/90 dark:bg-gray-800/80 shadow-2xl ring-2 ring-blue-500/40"
-          : "bg-white/60 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700"
-      }`}
-    >
-      <div className="flex justify-between">
-        <h3 className="text-lg font-semibold">{data.role}</h3>
-        {data.isCurrent && (
-          <span className="flex justify-center items-center px-2 py-1 text-xs rounded-full bg-green-500/10 text-green-500">
-            Current
-          </span>
-        )}
-      </div>
-
-      <p className="mt-1 text-sm text-gray-500">
-        <span className="font-medium">{data.company}</span> •{" "}
-        <span className="italic">{data.period}</span>
-      </p>
-
-      <p className="mt-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-        {data.description}
-      </p>
-    </div>
   );
 }
