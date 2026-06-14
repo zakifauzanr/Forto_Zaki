@@ -16,7 +16,7 @@ const DataExperience = [
         "Mengembangkan chatbot berbasis AI untuk kebutuhan automasi pengetahuan internal perusahaan khususnya SOP dan aturan.",
         "Mendesain dan implementasi sistem untuk integrasi antar sistem yang ada pada perusahaan terutama untuk meningkatkan alur data agar lebih efisien."
       ],
-      skills: ["Laravel", "PHP", "MySQL", "Web Development"]
+      skills: ["Svelte", "Laravel", "PostgreSQL", "TailwindCSS", "Web Development", "AI Chatbot", "React", "NestJS"]
     },
     {
       id: 2,
@@ -30,7 +30,7 @@ const DataExperience = [
         "Mengembangkan fitur baru sesuai kebutuhan klien.",
         "Memberikan rekomendasi teknis untuk meningkatkan fungsionalitas dan pengalaman pengguna."
       ],
-      skills: ["Laravel", "PHP", "MySQL", "Web Development"]
+      skills: ["Laravel", "PHP", "MySQL", "NestJS", "React", "Golang", "Web Development"]
     },
     {
       id: 3,
