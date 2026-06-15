@@ -310,10 +310,10 @@ export default function Project() {
       >
         <div className="glass border border-white/10 rounded-2xl p-10 max-w-2xl mx-auto">
           <h2 className="text-2xl lg:text-3xl font-bold text-white mb-3">
-            Tertarik dengan hasil kerjaku?
+            Tertarik dengan hasil kerja saya?
           </h2>
           <p className="text-slate-300 mb-6">
-            Hubungi aku untuk kolaborasi, proyek freelance, atau pertanyaan seputar teknologi!
+            Hubungi saya untuk kolaborasi, proyek freelance, atau pertanyaan seputar teknologi!
           </p>
           <a href="mailto:zakifauzanrabb@gmail.com">
             <Button
