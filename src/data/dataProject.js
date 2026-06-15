@@ -64,6 +64,16 @@ const DataProject = [
         Gambar:null,
     },
     {
+        Nama: 'Hotel Mobile App v2',
+        Deskripsi:`Project Praktikum Mobile yang membuat sebuah aplikasi mobile bertema booking hotel dimana ini menggunakan Flutter dan Sql Lite.`,
+        Tools: 'Flutter',
+        Link:'',
+        Github:'https://github.com/FP3-Hacktiv/react-native-hotel-app',
+        Tipe:'Studi Independen',
+        Tahun: '2024',
+        Gambar:null,
+    },
+    {
         Nama: 'INSEVENT Website',
         Deskripsi:`INSEVENT (Information System Event) merupakan sebuah kegiatan tahunan yang diselenggarakan oleh 
         program studi Sistem Informasi di Fakultas Teknik, Universitas Mulawarman.`,

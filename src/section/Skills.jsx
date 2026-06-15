@@ -1,19 +1,23 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBootstrap, faCss3, faFigma, faHtml5, faJava, faPhp, faPython, faWordpress, faReact, faLaravel } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase, faFileExcel, faFileWord } from '@fortawesome/free-solid-svg-icons';
+import { faCss3, faFigma, faHtml5, faJava, faPhp, faPython, faWordpress, faReact, faLaravel, faGolang, faBootstrap, faJs } from '@fortawesome/free-brands-svg-icons';
+import { faDatabase, faFileExcel, faFilePowerpoint, faFileWord } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 
 const skillCategories = [
   {
-    title: "Web Framework",
+    title: "Web  Library and Framework",
     level: "Advanced",
     projects: "8 Projects",
     tools: [
       { name: "React", icon: faReact, color: "text-[#61DAFB]" },
       { name: "Laravel", icon: faLaravel, color: "text-[#FF2D20]" },
-      { name: "Database", icon: faDatabase, color: "text-slate-300" },
-      { name: "Bootstrap", icon: faBootstrap, color: "text-[#7952B3]" }
-    ]
+      { name: "Golang", icon: faGolang, color: "text-[#E34F26]" },
+      { name: "Bootstrap", icon: faBootstrap, color: "text-[#7952B3]" },
+      { name: "Tailwind CSS", icon: '', color: "text-[#7952B3]" },
+      { name: "Fast API", icon: '', color: "text-[#7952B3]" },
+      { name: "NestJs", icon: '', color: "text-[#7952B3]" },
+      { name: "NextJs", icon: '', color: "text-[#7952B3]" },
+    ],
   },
   {
     title: "Web Native",
@@ -22,8 +26,8 @@ const skillCategories = [
     tools: [
       { name: "HTML5", icon: faHtml5, color: "text-[#E34F26]" },
       { name: "PHP", icon: faPhp, color: "text-[#777BB4]" },
-      { name: "Database", icon: faDatabase, color: "text-slate-300" },
-      { name: "CSS3", icon: faCss3, color: "text-[#1572B6]" }
+      { name: "CSS3", icon: faCss3, color: "text-[#1572B6]" },
+      { name: "Javascript", icon: faJs, color: "text-yellow-400" },
     ]
   },
   {
@@ -33,7 +37,8 @@ const skillCategories = [
     tools: [
       { name: "Python", icon: faPython, color: "text-[#3776AB]" },
       { name: "Java", icon: faJava, color: "text-[#007396]" },
-      { name: "WordPress", icon: faWordpress, color: "text-[#21759B]" }
+      { name: "Database", icon: faDatabase, color: "text-slate-300" },
+      { name: "WordPress", icon: faWordpress, color: "text-[#21759B]" },
     ]
   },
   {
@@ -43,7 +48,8 @@ const skillCategories = [
     tools: [
       { name: "Figma", icon: faFigma, color: "text-[#F24E1E]" },
       { name: "Excel", icon: faFileExcel, color: "text-[#217346]" },
-      { name: "Word", icon: faFileWord, color: "text-[#2B579A]" }
+      { name: "Word", icon: faFileWord, color: "text-[#2B579A]" },
+      { name: "Power Point", icon: faFilePowerpoint, color: "text-red-500" },
     ]
   }
 ];
@@ -94,7 +100,7 @@ export default function Skills() {
                             </div>
 
                             {/* Tools Grid */}
-                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-auto">
+                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-auto h-full">
                                 {category.tools.map((tool, i) => (
                                     <div 
                                         key={i} 
