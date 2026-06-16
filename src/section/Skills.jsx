@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCss3, faFigma, faHtml5, faJava, faPhp, faPython, faWordpress, faReact, faLaravel, faGolang, faBootstrap, faJs } from '@fortawesome/free-brands-svg-icons';
+import { faCss3, faFigma, faHtml5, faJava, faPhp, faPython, faWordpress, faReact, faLaravel, faBootstrap, faJs, faSvelte, faTailwindCss } from '@fortawesome/free-brands-svg-icons';
 import { faDatabase, faFileExcel, faFilePowerpoint, faFileWord } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 
@@ -11,9 +11,9 @@ const skillCategories = [
     tools: [
       { name: "React", icon: faReact, color: "text-[#61DAFB]" },
       { name: "Laravel", icon: faLaravel, color: "text-[#FF2D20]" },
-      { name: "Golang", icon: faGolang, color: "text-[#E34F26]" },
+      { name: "Svelte", icon: faSvelte, color: "text-[#E34F26]" },
       { name: "Bootstrap", icon: faBootstrap, color: "text-[#7952B3]" },
-      { name: "Tailwind CSS", icon: '', color: "text-[#7952B3]" },
+      { name: "Tailwind CSS", icon: faTailwindCss, color: "text-[#7952B3]" },
       { name: "Fast API", icon: '', color: "text-[#7952B3]" },
       { name: "NestJs", icon: '', color: "text-[#7952B3]" },
       { name: "NextJs", icon: '', color: "text-[#7952B3]" },

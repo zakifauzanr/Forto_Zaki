@@ -103,7 +103,7 @@ export default function Navbars() {
         <Linkdom
           to="Project"
           smooth
-          offset={20}
+          offset={-150}
           duration={500}
           onClick={() => setActive("project")}
           className={`${navItemBase} ${
