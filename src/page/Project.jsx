@@ -47,8 +47,10 @@ export default function Project() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-60"></div>
       </div>
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-bold text-white mb-3">{item.Nama}</h3>
-        <h4 className="text-sm text-slate-300 leading-relaxed mb-3 font-medium">{item.Mitra || 'Personal Project'}</h4>
+        <div className="flex flex-col gap-2 mb-3">
+          <h3 className="text-xl font-bold text-white">{item.Nama}</h3>
+          <h4 className="text-sm text-slate-200/50 leading-relaxed font-medium">{item.Mitra || 'Personal Project'}</h4>
+        </div>
         <p className="text-sm text-slate-300 leading-relaxed mb-6 flex-grow">
           {item.Deskripsi}
         </p>
@@ -102,7 +104,10 @@ export default function Project() {
       </div>
       <div className="p-6 lg:p-8 flex flex-col justify-between flex-1">
         <div>
-          <h3 className="text-xl font-bold text-white mb-3">{item.Nama}</h3>
+          <div className="flex justify-between items-center">
+            <h3 className="text-xl font-bold text-white mb-3">{item.Nama}</h3>
+            <h4 className="text-sm text-slate-200/50 leading-relaxed font-medium">{item.Mitra || 'Personal Project'}</h4>
+          </div>
           <p className="text-sm text-slate-300 leading-relaxed mb-6">
             {item.Deskripsi}
           </p>
@@ -159,7 +164,10 @@ export default function Project() {
         </div>
       </div>
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-lg font-bold text-white mb-2">{item.Nama}</h3>
+        <div className="flex justify-between items-center">
+          <h3 className="text-lg font-bold text-white mb-2">{item.Nama}</h3>
+          <h4 className="text-sm text-slate-200/50 leading-relaxed font-medium">{item.Mitra || 'Personal Project'}</h4>
+        </div>
         <p className="text-sm text-slate-300 leading-relaxed mb-6 flex-grow">
           {item.Deskripsi}
         </p>
