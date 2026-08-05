@@ -16,8 +16,8 @@ export default function Main(){
     },[])
     
     return(
-        <div className="w-full min-h-screen text-white" data-aos="fade-down">
-            <div id='Hero' className="relative mx-7 lg:mx-10 lg:py-20 py-10 mt-5 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center glass">
+        <div className="w-full min-h-screen text-white flex flex-col items-center" data-aos="fade-down">
+            <div id='Hero' className="relative mx-7 px-6 lg:mx-10 lg:px-16 lg:py-20 py-10 mt-5 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center glass max-w-[1500px]">
                 <div className='w-full px-5 lg:px-7'>
                     <h1 className="text-2xl lg:text-4xl font-bold leading-tight">
                     <TypeAnimation

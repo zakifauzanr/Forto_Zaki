@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 const achievements = [
   {
     title: "Delegates of Istanbul Youth Summit",
@@ -24,7 +22,7 @@ const achievements = [
 
 export default function Achieve() {
     return (
-        <section id="Award" className="mt-20 px-6 lg:px-16 max-w-7xl mx-auto" data-aos="fade-up">
+        <section id="Award" className="mt-20 px-6 lg:px-16 max-w-[1500px] md:w-[1500px] mx-auto" data-aos="fade-up">
             <div className="mb-12">
                 <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8">Achievements</h2>
                 <div className="flex flex-col gap-6">

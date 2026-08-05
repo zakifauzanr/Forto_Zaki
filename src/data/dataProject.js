@@ -7,6 +7,7 @@ import ecommerce from '../assets/Project/ecommerce.png';
 import kilang from '../assets/Project/kilang.png';
 import bungaputih from '../assets/Project/bungaputih.png';
 import sikab from '../assets/Project/sikab.png';
+import githubDashboard from '../assets/Project/project-dashboard.jpeg';
 
 const DataProject = [
     {
@@ -151,6 +152,18 @@ const DataProject = [
         Tahun: '2025',
         Gambar:null,
     },
+    {
+        Nama: 'Project Monitoring',
+        Deskripsi:`Website yang bertujuan menjadi monitoring progress, task, commit, hingga CI CD dari project perusahaan.`,
+        Tools:'NextJS, TailwindCSS, SQL Lite',
+        Mitra:'',
+        Link:'',
+        Github:'https://github.com/zakifauzanr/my-github-dashboard',
+        Tipe:'Recent',
+        Tahun: '2026',
+        Gambar:githubDashboard,
+    },
+    
 ]
 
 export default DataProject;

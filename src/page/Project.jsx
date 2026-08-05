@@ -38,9 +38,9 @@ export default function Project() {
       className="glass rounded-2xl overflow-hidden flex flex-col hover:border-blue-500/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] transition-all duration-300 border border-white/10 group"
       data-aos="fade-up"
     >
-      <div className="h-52 overflow-hidden relative">
+      <div className="h-72 overflow-hidden relative">
         <img
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
           src={imgSrc(item)}
           alt={item.Nama}
         />
@@ -48,6 +48,7 @@ export default function Project() {
       </div>
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold text-white mb-3">{item.Nama}</h3>
+        <h4 className="text-sm text-slate-300 leading-relaxed mb-3 font-medium">{item.Mitra || 'Personal Project'}</h4>
         <p className="text-sm text-slate-300 leading-relaxed mb-6 flex-grow">
           {item.Deskripsi}
         </p>
@@ -183,10 +184,10 @@ export default function Project() {
   );
 
   return (
-    <section className="px-6 lg:px-16 py-12 min-h-screen max-w-7xl mx-auto">
+    <section className="px-6 lg:px-16 py-12 min-h-screen max-w-[1500px] mx-auto">
       <div className="text-center mb-12" data-aos="fade-down">
         <SectionTitle title="All Projects" />
-        <p className="text-slate-400 mt-2 text-sm">
+        <p className="text-slate-400 text-md">
           Kumpulan project yang telah saya kerjakan
         </p>
       </div>
@@ -235,7 +236,7 @@ export default function Project() {
       {/* Internship Projects */}
       <div className="mb-16" data-aos="fade-up">
         <h2 className="text-2xl lg:text-3xl font-bold text-white mb-8">
-          💼 Internship Projects
+          💼 Company Projects
         </h2>
         <motion.div
           variants={containerVariants}
