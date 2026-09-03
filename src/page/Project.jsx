@@ -1,6 +1,7 @@
 import { Button } from '@material-tailwind/react';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import DataProject from '../data/dataProject';
 import SectionTitle from '../component/atom/SectionTitle';
 import skeleton from '../assets/Project/skeleton.jpg';
@@ -32,163 +33,151 @@ export default function Project() {
   };
 
   const renderCard = (item, idx) => (
-    <motion.div
-      key={idx}
-      variants={cardVariants}
-      className="glass rounded-2xl overflow-hidden flex flex-col hover:border-blue-500/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] transition-all duration-300 border border-white/10 group"
-      data-aos="fade-up"
-    >
-      <div className="h-72 overflow-hidden relative">
-        <img
-          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
-          src={imgSrc(item)}
-          alt={item.Nama}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-60"></div>
-      </div>
-      <div className="p-6 flex flex-col flex-grow">
-        <div className="flex flex-col gap-2 mb-3">
-          <h3 className="text-xl font-bold text-white">{item.Nama}</h3>
-          <h4 className="text-sm text-slate-200/50 leading-relaxed font-medium">{item.Mitra || 'Personal Project'}</h4>
+    <Link to={`/project/${item.id}`} key={idx}>
+      <motion.div
+        variants={cardVariants}
+        className="glass rounded-2xl overflow-hidden flex flex-col hover:border-blue-500/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] transition-all duration-300 border border-white/10 group"
+        data-aos="fade-up"
+      >
+        <div className="h-72 overflow-hidden relative">
+          <img
+            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+            src={imgSrc(item)}
+            alt={item.Nama}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-60"></div>
         </div>
-        <p className="text-sm text-slate-300 leading-relaxed mb-6 flex-grow">
-          {item.Deskripsi}
-        </p>
-        <div className="flex justify-between items-end mt-auto pt-4 border-t border-white/10">
-          <div className="flex-1">
-            <p className="text-xs text-slate-400 mb-1">Tools</p>
-            <p className="text-[10px] font-medium text-blue-300">{item.Tools}</p>
+        <div className="p-6 flex flex-col flex-grow">
+          <div className="flex flex-col gap-2 mb-3">
+            <h3 className="text-xl font-bold text-white">{item.Nama}</h3>
+            <h4 className="text-sm text-slate-200/50 leading-relaxed font-medium">{item.Mitra || 'Personal Project'}</h4>
           </div>
-          <div className="flex gap-2 shrink-0 ml-4">
-            {item.Link && (
-              <a
-                href={item.Link}
-                target="_blank"
-                rel="noreferrer"
-                className="px-4 py-2 text-sm font-medium text-white glass border border-white/20 rounded-lg hover:bg-white/10 transition-colors"
-              >
-                Live Demo
-              </a>
-            )}
-            {item.Github && (
-              <a
-                href={item.Github}
-                target="_blank"
-                rel="noreferrer"
-                className="px-4 py-2 text-sm font-medium text-white glass border border-white/20 rounded-lg hover:bg-white/10 transition-colors"
-              >
-                GitHub
-              </a>
-            )}
+          <p className="text-sm text-slate-300 leading-relaxed mb-6 flex-grow">
+            {item.Deskripsi}
+          </p>
+          <div className="flex justify-between items-end mt-auto pt-4 border-t border-white/10">
+            <div className="flex-1">
+              <p className="text-xs text-slate-400 mb-1">Tools</p>
+              <p className="text-[10px] font-medium text-blue-300">{item.Tools}</p>
+            </div>
+            <div className="flex gap-2 shrink-0 ml-4">
+              {item.Link && (
+                <span
+                  className="px-4 py-2 text-sm font-medium text-white glass border border-white/20 rounded-lg hover:bg-white/10 transition-colors"
+                >
+                  Live Demo
+                </span>
+              )}
+              {item.Github && (
+                <span
+                  className="px-4 py-2 text-sm font-medium text-white glass border border-white/20 rounded-lg hover:bg-white/10 transition-colors"
+                >
+                  GitHub
+                </span>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 
   const renderHorizontalCard = (item, idx) => (
-    <motion.div
-      key={idx}
-      variants={cardVariants}
-      className="glass rounded-2xl overflow-hidden flex flex-col lg:flex-row hover:border-blue-500/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] transition-all duration-300 border border-white/10 group"
-      data-aos="fade-up"
-    >
-      <div className="w-full lg:w-[500px] h-56 lg:h-auto overflow-hidden shrink-0">
-        {imgSrc(item) && (
-          <img
-            src={imgSrc(item)}
-            alt={item.Nama}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
-        )}
-      </div>
-      <div className="p-6 lg:p-8 flex flex-col justify-between flex-1">
-        <div>
-          <div className="flex justify-between items-center">
-            <h3 className="text-xl font-bold text-white mb-3">{item.Nama}</h3>
-            <h4 className="text-sm text-slate-200/50 leading-relaxed font-medium">{item.Mitra || 'Personal Project'}</h4>
-          </div>
-          <p className="text-sm text-slate-300 leading-relaxed mb-6">
-            {item.Deskripsi}
-          </p>
+    <Link to={`/project/${item.id}`} key={idx}>
+      <motion.div
+        variants={cardVariants}
+        className="glass rounded-2xl overflow-hidden flex flex-col lg:flex-row hover:border-blue-500/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] transition-all duration-300 border border-white/10 group"
+        data-aos="fade-up"
+      >
+        <div className="w-full lg:w-[500px] h-56 lg:h-auto overflow-hidden shrink-0">
+          {imgSrc(item) && (
+            <img
+              src={imgSrc(item)}
+              alt={item.Nama}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+          )}
         </div>
-        <div className="flex justify-between items-end mt-auto pt-4 border-t border-white/10">
-          <div className="flex-1">
-            <p className="text-xs text-slate-400 mb-1">Tools</p>
-            <p className="text-[10px] font-medium text-blue-300">{item.Tools}</p>
+        <div className="p-6 lg:p-8 flex flex-col justify-between flex-1">
+          <div>
+            <div className="flex justify-between items-center">
+              <h3 className="text-xl font-bold text-white mb-3">{item.Nama}</h3>
+              <h4 className="text-sm text-slate-200/50 leading-relaxed font-medium">{item.Mitra || 'Personal Project'}</h4>
+            </div>
+            <p className="text-sm text-slate-300 leading-relaxed mb-6">
+              {item.Deskripsi}
+            </p>
           </div>
-          <div className="flex gap-2 shrink-0 ml-4">
-            {item.Link && (
-              <a
-                href={item.Link}
-                target="_blank"
-                rel="noreferrer"
-                className="px-4 py-2 text-sm font-medium text-white glass border border-white/20 rounded-lg hover:bg-white/10 transition-colors"
-              >
-                Live Demo
-              </a>
-            )}
-            {item.Github && (
-              <a
-                href={item.Github}
-                target="_blank"
-                rel="noreferrer"
-                className="px-4 py-2 text-sm font-medium text-white glass border border-white/20 rounded-lg hover:bg-white/10 transition-colors"
-              >
-                GitHub
-              </a>
-            )}
+          <div className="flex justify-between items-end mt-auto pt-4 border-t border-white/10">
+            <div className="flex-1">
+              <p className="text-xs text-slate-400 mb-1">Tools</p>
+              <p className="text-[10px] font-medium text-blue-300">{item.Tools}</p>
+            </div>
+            <div className="flex gap-2 shrink-0 ml-4">
+              {item.Link && (
+                <span
+                  className="px-4 py-2 text-sm font-medium text-white glass border border-white/20 rounded-lg hover:bg-white/10 transition-colors"
+                >
+                  Live Demo
+                </span>
+              )}
+              {item.Github && (
+                <span
+                  className="px-4 py-2 text-sm font-medium text-white glass border border-white/20 rounded-lg hover:bg-white/10 transition-colors"
+                >
+                  GitHub
+                </span>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 
   const renderEventCard = (item, idx) => (
-    <motion.div
-      key={idx}
-      variants={cardVariants}
-      className="glass rounded-2xl overflow-hidden flex flex-col hover:border-blue-500/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] transition-all duration-300 border border-white/10 group"
-      data-aos="fade-up"
-    >
-      <div className="relative">
-        <div className="h-48 overflow-hidden">
-          <img
-            src={imgSrc(item)}
-            alt={item.Nama}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
-        </div>
-        <div className="absolute top-3 right-3 bg-indigo-500/90 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md backdrop-blur-sm">
-          EVENT
-        </div>
-      </div>
-      <div className="p-6 flex flex-col flex-grow">
-        <div className="flex justify-between items-center">
-          <h3 className="text-lg font-bold text-white mb-2">{item.Nama}</h3>
-          <h4 className="text-sm text-slate-200/50 leading-relaxed font-medium">{item.Mitra || 'Personal Project'}</h4>
-        </div>
-        <p className="text-sm text-slate-300 leading-relaxed mb-6 flex-grow">
-          {item.Deskripsi}
-        </p>
-        <div className="flex justify-between items-end mt-auto pt-4 border-t border-white/10">
-          <div className="flex-1">
-            <p className="text-xs text-slate-400 mb-1">Tools</p>
-            <p className="text-[10px] font-medium text-blue-300">{item.Tools}</p>
+    <Link to={`/project/${item.id}`} key={idx}>
+      <motion.div
+        variants={cardVariants}
+        className="glass rounded-2xl overflow-hidden flex flex-col hover:border-blue-500/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] transition-all duration-300 border border-white/10 group"
+        data-aos="fade-up"
+      >
+        <div className="relative">
+          <div className="h-48 overflow-hidden">
+            <img
+              src={imgSrc(item)}
+              alt={item.Nama}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
           </div>
-          {item.Link && (
-            <a
-              href={item.Link}
-              target="_blank"
-              rel="noreferrer"
-              className="px-4 py-2 text-sm font-medium text-white glass border border-white/20 rounded-lg hover:bg-white/10 transition-colors shrink-0 ml-4"
-            >
-              Demo
-            </a>
-          )}
+          <div className="absolute top-3 right-3 bg-indigo-500/90 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md backdrop-blur-sm">
+            EVENT
+          </div>
         </div>
-      </div>
-    </motion.div>
+        <div className="p-6 flex flex-col flex-grow">
+          <div className="flex justify-between items-center">
+            <h3 className="text-lg font-bold text-white mb-2">{item.Nama}</h3>
+            <h4 className="text-sm text-slate-200/50 leading-relaxed font-medium">{item.Mitra || 'Personal Project'}</h4>
+          </div>
+          <p className="text-sm text-slate-300 leading-relaxed mb-6 flex-grow">
+            {item.Deskripsi}
+          </p>
+          <div className="flex justify-between items-end mt-auto pt-4 border-t border-white/10">
+            <div className="flex-1">
+              <p className="text-xs text-slate-400 mb-1">Tools</p>
+              <p className="text-[10px] font-medium text-blue-300">{item.Tools}</p>
+            </div>
+            {item.Link && (
+              <span
+                className="px-4 py-2 text-sm font-medium text-white glass border border-white/20 rounded-lg hover:bg-white/10 transition-colors shrink-0 ml-4"
+              >
+                Demo
+              </span>
+            )}
+          </div>
+        </div>
+      </motion.div>
+    </Link>
   );
 
   return (

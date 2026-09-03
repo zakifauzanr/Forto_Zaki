@@ -10,7 +10,7 @@ export default function Project(){
                 <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8">Recent Projects</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {DataProject.slice(0, 3).map((item, idx) => (
-                        <div key={idx} className="glass rounded-2xl overflow-hidden flex flex-col hover:border-blue-500/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] transition-all duration-300 border border-white/10">
+                        <Link to={`/project/${item.id}`} key={idx} className="glass rounded-2xl overflow-hidden flex flex-col hover:border-blue-500/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)] transition-all duration-300 border border-white/10">
                             {/* Image Container */}
                             <div className="h-48 overflow-hidden relative">
                                 <img 
@@ -34,17 +34,14 @@ export default function Project(){
                                         <p className="text-xs text-slate-400 mb-1">Tools</p>
                                         <p className="text-[10px] font-medium text-blue-300">{item.Tools}</p>
                                     </div>
-                                    <a 
-                                        href={item.Link} 
-                                        target="_blank"
-                                        rel="noreferrer"
+                                    <span 
                                         className="px-4 py-2 text-sm font-medium text-white glass border border-white/20 rounded-lg hover:bg-white/10 transition-colors shrink-0 ml-4"
                                     >
                                         Live Demo
-                                    </a>
+                                    </span>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

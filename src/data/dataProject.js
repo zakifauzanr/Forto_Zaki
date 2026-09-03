@@ -8,9 +8,11 @@ import kilang from '../assets/Project/kilang.png';
 import bungaputih from '../assets/Project/bungaputih.png';
 import sikab from '../assets/Project/sikab.png';
 import githubDashboard from '../assets/Project/project-dashboard.jpeg';
+import helpdesk from '../assets/Project/helpdesk.jpeg';
 
 const DataProject = [
     {
+        id: 'dashboard-performance-inforsa',
         Nama: 'Dashboard Performance INFORSA',
         Deskripsi:`Sistem Dashboard berbasis Website yang bertujuan untuk memantau dan menganalisis kinerja anggota 
         dan struktur organisasi selama satu periode.`,
@@ -23,6 +25,7 @@ const DataProject = [
         Gambar:dashboardInforsa,
     },
     {
+        id: 'inforsa-website',
         Nama: 'INFORSA Website',
         Deskripsi:`Official Website INFORSA yang berada dibawah naungan 
         program studi Sistem Informasi di Fakultas Teknik, Universitas Mulawarman.`,
@@ -35,6 +38,7 @@ const DataProject = [
         Gambar:inforsa,
     },
     {
+        id: 'like-news',
         Nama: 'Like News',
         Deskripsi:`Like News merupakan website project akhir pada Studi Indepenten di mitra Hacktiv8 
         dimana memungkinkan pengguna untuk mengakses berita, menyimpan dan membaca berita yang ada pada API yang disediakan.`,
@@ -47,6 +51,7 @@ const DataProject = [
         Gambar:likenews,
     },
     {
+        id: 'e-commerce',
         Nama: 'E-Commerce',
         Deskripsi:`Website E-Commerce ini adalah project akhir kedua pada Studi Independen di Hacktiv8 dimana pengguna bisa
         Membeli dan memasukkan barang ke keranjang. Ini juga menerapkan redux untuk media penyimpanan sementara.`,
@@ -59,6 +64,7 @@ const DataProject = [
         Gambar:ecommerce,
     },
     {
+        id: 'hotel-mobile-app',
         Nama: 'Hotel Mobile App',
         Deskripsi:`Project ketiga Studi Independen Hacktiv8 yang membuat sebuah aplikasi mobile bertema booking hotel dimana ini menggunakan React Native.`,
         Tools: 'React Native',
@@ -70,6 +76,7 @@ const DataProject = [
         Gambar:null,
     },
     {
+        id: 'hotel-mobile-app-v2',
         Nama: 'Hotel Mobile App v2',
         Deskripsi:`Project Praktikum Mobile yang membuat sebuah aplikasi mobile bertema booking hotel dimana ini menggunakan Flutter dan Sql Lite.`,
         Tools: 'Flutter',
@@ -81,6 +88,7 @@ const DataProject = [
         Gambar:null,
     },
     {
+        id: 'insevent-website',
         Nama: 'INSEVENT Website',
         Deskripsi:`INSEVENT (Information System Event) merupakan sebuah kegiatan tahunan yang diselenggarakan oleh 
         program studi Sistem Informasi di Fakultas Teknik, Universitas Mulawarman.`,
@@ -93,6 +101,7 @@ const DataProject = [
         Gambar:insevent,
     },
     {
+        id: 'our-news',
         Nama: 'Our News',
         Deskripsi:`My News merupakan sebuah platform berita berbasis website dimana terdapat multirole dalam website ini. 
         Pengguna bisa memilih akan bertindak sebagai writer admin atau user yang menikmati berita saja.`,
@@ -105,6 +114,7 @@ const DataProject = [
         Gambar:ournews,
     },
     {
+        id: 'kilang-beach',
         Nama: 'KilangBeach',
         Deskripsi:`Kilang Beach merupakan website project yang membawakan nuansa wisata pantai. Web ini bertujuan memudahkan wisatawan dalam mengetahui informasi mengenai pantai kilang di Kota Balikpapan. 
         Selain itu juga diberikan informasi mengenai resto terdekat, hotel terdekat dan lain sebagainya.`,
@@ -117,6 +127,7 @@ const DataProject = [
         Gambar:kilang,
     },
     {
+        id: 'sikab-kaltim',
         Nama: 'Sikab Kaltim',
         Deskripsi:`Website ini merupakan website yang ditujukan untuk menampilkan berbagai macam burung endemik khas kalimantan timur. Website ini memiliki fitur seperti
                     Pencarian informasi, Pemberian informasi habitat, hingga galeri burung.`,
@@ -129,6 +140,7 @@ const DataProject = [
         Gambar:sikab,
     },
     {
+        id: 'web-arsip-surat',
         Nama: 'Web Arsip Surat',
         Deskripsi:`Website ini merupakan website dashboard yang difungsikan untuk mendigitalisasi proses pengarsipan surat. Fitur yang terdapat dalam website ini berupa pencarian, pengelompokan, penyaringan hingga memberikan detail informasi setiap surat yang ada.`,
         Tools:'ReactJS, NodeJS, TailwindCSS, Mysql',
@@ -140,6 +152,7 @@ const DataProject = [
         Gambar:bungaputih,
     },
     {
+        id: 'dashboard-tracking-contract',
         Nama: 'Dashboard Performances Tracking Contract',
         Deskripsi:`Website Dashboard yang ditujukan untuk menampilkan dan mengelola informasi performa account manager.`,
         Tools:'Laravel, Bootstrap, Nginx, Mysql',
@@ -151,6 +164,7 @@ const DataProject = [
         Gambar:null,
     },
     {
+        id: 'hris',
         Nama: 'HRIS',
         Deskripsi:`Website yang ditujukan untuk pengelolaan sumber daya manusia dalam sebuah perusahaan.`,
         Tools:'ReactTSX, NestJS, TailwindCSS, PostgreSQL',
@@ -162,6 +176,7 @@ const DataProject = [
         Gambar:null,
     },
     {
+        id: 'project-monitoring',
         Nama: 'Project Monitoring',
         Deskripsi:`Website yang bertujuan menjadi monitoring progress, task, commit, hingga CI CD dari project perusahaan.`,
         Tools:'NextJS, TailwindCSS, SQL Lite',
@@ -171,6 +186,18 @@ const DataProject = [
         Tipe:'Recent',
         Tahun: '2026',
         Gambar:githubDashboard,
+    },
+    {
+        id: 'helpdesk',
+        Nama: 'IT Helpdesk',
+        Deskripsi:`Website yang digunakan sebagai platform untuk memanajemen tiket bantuan seputar IT seperti masalah software dan hardware.`,
+        Tools:'Laravel, TailwindCSS, PostgreSql, Jquery, Datatable',
+        Mitra:'Petrolog Indah',
+        Link:'',
+        Github:'',
+        Tipe:'Recent',
+        Tahun: '2026',
+        Gambar:helpdesk,
     },
 
 ]
